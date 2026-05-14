@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-accent: #020618; 
+  --color-primary: #FFFFFF;
+  --color-secondary: #00ffef;
+}
+
