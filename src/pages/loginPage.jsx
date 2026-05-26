@@ -3,12 +3,40 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
-import { IoMailOutline, IoLockClosedOutline, IoAirplaneOutline, IoSchoolOutline, IoLanguageOutline } from "react-icons/io5";
+import { IoMailOutline, IoLockClosedOutline, IoAirplaneOutline } from "react-icons/io5";
+import { useGoogleLogin } from "@react-oauth/google";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+
+    const googleLogin = useGoogleLogin({
+        onSuccess: (response) => {
+            axios
+                .post(import.meta.env.VITE_API_URL + "/api/users/google-login", {
+                    token: response.access_token,
+                })
+                .then((response) => {
+                    localStorage.setItem("token", response.data.token);
+                    localStorage.setItem("user", JSON.stringify(response.data.user));
+                    toast.success("Login successful");
+                    const user = response.data.user;
+                    if (user.role === "admin") {
+                        navigate("/admin");
+                    } else {
+                        navigate("/");
+                    }
+                })
+                .catch((err) => {
+                    console.error("Login failed", err);
+                    toast.error("Login failed. Please try again.");
+                });
+        },
+        onError: () => {
+            toast.error("Google Login Failed");
+        }
+    });
 
     async function login() {
         try {
@@ -17,8 +45,9 @@ export default function LoginPage() {
                 password: password,
             });
             localStorage.setItem("token", response.data.token);
+            localStorage.setItem("user", JSON.stringify(response.data.user));
             const user = response.data.user;
-            if (user.role == "admin") {
+            if (user.role === "admin") {
                 navigate("/admin");
             } else {
                 navigate("/");
@@ -30,134 +59,151 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="w-full h-screen bg-primary flex items-center justify-center relative overflow-hidden selection:bg-secondary selection:text-accent font-outfit">
+        <div className="w-full min-h-screen bg-accent flex items-center justify-center relative overflow-x-hidden selection:bg-secondary selection:text-accent font-outfit p-4 lg:p-0">
             
-            {/* --- REALISTIC MOTION BACKGROUND --- */}
+            {/* Dynamic Flight Animation Background */}
             <div className="absolute inset-0 pointer-events-none z-0">
-                
-                {/* SVG Path Animation */}
-                <svg className="w-full h-full opacity-20" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                <svg className="w-full h-full opacity-15" viewBox="0 0 1000 1000" preserveAspectRatio="none">
                     <path
-                        id="flightPath"
-                        d="M 1100 600 Q 800 500 700 300 T 400 100" // Path from Right-Center to Top-Center
+                        d="M 1100 600 Q 800 500 700 300 T 400 100"
                         fill="none"
-                        stroke="#00FFEF" // Your secondary color
-                        strokeWidth="2"
-                        strokeDasharray="10,10"
-                        className="animate-[drawPath_10s_linear_infinite]"
+                        stroke="#00FFEF"
+                        strokeWidth="1.5"
+                        strokeDasharray="12,12"
+                        className="animate-[drawPath_12s_linear_infinite]"
                     />
                 </svg>
-
-                {/* Flying Plane following the path */}
                 <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="plane-container animate-[planeMove_10s_linear_infinite]">
-                        <IoAirplaneOutline 
-                            size={40} 
-                            className="text-secondary rotate-[240deg] filter drop-shadow-[0_0_8px_rgba(0,255,239,0.5)]" 
+                    <div className="plane-container animate-[planeMove_12s_linear_infinite]">
+                        <IoAirplaneOutline
+                            size={32}
+                            className="text-secondary rotate-[240deg] filter drop-shadow-[0_0_12px_rgba(0,255,239,0.8)]"
                         />
-                        {/* Vapor Trail */}
-                        <div className="w-20 h-[1px] bg-gradient-to-r from-transparent to-secondary/30 absolute right-full top-1/2 -translate-y-1/2 mr-2" />
                     </div>
                 </div>
-
-                {/* Background Glows */}
-                <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] rounded-full bg-secondary/10 blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[100px]" />
+                {/* Modern subtle ambient glows */}
+                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-secondary/10 blur-[150px]" />
+                <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-secondary/5 blur-[130px]" />
             </div>
 
-            {/* --- LOGIN CONTENT --- */}
-            <div className="w-full max-w-[1200px] flex items-center justify-between px-8 lg:px-20 z-10">
+            <div className="w-full max-w-[1240px] flex flex-col lg:flex-row items-center justify-between gap-12 lg:px-16 z-10 my-8 lg:my-0">
                 
-                {/* Left Branding */}
-                <div className="hidden lg:flex flex-col max-w-lg">
+                {/* Left Hero Side */}
+                <div className="flex flex-col max-w-lg text-center lg:text-left items-center lg:items-start">
                     <div className="flex items-center gap-4 mb-6">
-                        <div className="h-[1px] w-12 bg-secondary/50" />
-                        <span className="text-[10px] text-secondary tracking-[5px] uppercase font-bold">Global Admissions</span>
+                        <div className="h-[1px] w-12 bg-secondary/40 hidden lg:block" />
+                        <span className="text-[11px] text-secondary tracking-[6px] uppercase font-bold bg-secondary/10 px-3 py-1.5 rounded-full lg:bg-transparent lg:p-0">
+                            Global Admissions
+                        </span>
                     </div>
-                    <h1 className="font-syne font-extrabold text-7xl text-accent tracking-tighter leading-[0.9] mb-6">
-                        Fly to <br /> 
-                        <span className="text-secondary">Seoul.</span>
+                    <h1 className="font-syne font-extrabold text-5xl sm:text-6xl lg:text-7xl text-primary tracking-tighter leading-[1.05] lg:leading-[0.95] mb-6">
+                        Fly to <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-secondary/80 to-secondary/40">Seoul.</span>
                     </h1>
-                    <p className="text-accent/40 text-lg max-w-xs font-light">
-                        Your academic journey to South Korea starts with a single click.
+                    <p className="text-primary/50 text-base sm:text-lg max-w-sm font-light leading-relaxed">
+                        Your academic journey to South Korea starts with a single click. Welcome back to your portal.
                     </p>
                 </div>
 
-                {/* Login Card */}
-                <div className="w-full max-w-[440px] bg-white/80 backdrop-blur-3xl border border-white/50 rounded-[2.5rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] p-12">
-                    <div className="mb-10">
-                        <h2 className="font-syne font-bold text-3xl text-accent mb-1 tracking-tight">Welcome</h2>
-                        <p className="text-xs text-accent/40 uppercase tracking-widest font-bold">Portal Access</p>
+                {/* Right Form Side - Premium White Glass Card */}
+                <div className="w-full max-w-[460px] bg-white/90 backdrop-blur-3xl border border-white/40 rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] p-8 sm:p-10 lg:p-12 relative overflow-hidden group/card transition-all duration-500 hover:shadow-[0_50px_100px_-15px_rgba(0,255,239,0.15)]">
+                    <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-secondary to-transparent" />
+                    
+                    <div className="mb-8">
+                        <h2 className="font-syne font-bold text-3xl text-accent mb-1 tracking-tight">Welcome Back</h2>
+                        <p className="text-[10px] text-accent/40 tracking-widest font-bold uppercase">Portal Access</p>
                     </div>
 
-                    <div className="space-y-5">
-                        <div className="group">
-                            <div className="relative">
-                                <IoMailOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={18} />
-                                <input
-                                    type="email"
-                                    placeholder="Email Address"
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl pl-12 pr-4 text-sm focus:outline-none focus:border-secondary transition-all"
-                                />
-                            </div>
+                    <div className="space-y-4">
+                        {/* Email Input */}
+                        <div className="group relative">
+                            <IoMailOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={18} />
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="w-full h-13 bg-accent/[0.02] border border-accent/10 rounded-xl pl-12 pr-4 text-sm text-accent placeholder-accent/30 focus:outline-none focus:border-secondary focus:bg-white transition-all"
+                            />
                         </div>
 
-                        <div className="group">
-                            <div className="relative">
-                                <IoLockClosedOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={18} />
-                                <input
-                                    type="password"
-                                    placeholder="Password"
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl pl-12 pr-4 text-sm focus:outline-none focus:border-secondary transition-all"
-                                />
-                            </div>
+                        {/* Password Input */}
+                        <div className="group relative">
+                            <IoLockClosedOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={18} />
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="w-full h-13 bg-accent/[0.02] border border-accent/10 rounded-xl pl-12 pr-4 text-sm text-accent placeholder-accent/30 focus:outline-none focus:border-secondary focus:bg-white transition-all"
+                            />
+                        </div>
+
+                        {/* Forgot Password Link */}
+                        <div className="flex justify-end pt-1">
+                            <button 
+                                onClick={() => navigate("/forgot-password")}
+                                className="text-xs font-semibold text-accent/50 hover:text-secondary transition-colors duration-200"
+                            >
+                                Forgot Password?
+                            </button>
                         </div>
                     </div>
 
+                    {/* Submit Button */}
                     <button
                         onClick={login}
-                        className="w-full h-14 bg-accent text-primary font-syne font-bold text-[11px] tracking-[3px] uppercase rounded-2xl mt-10 hover:bg-secondary hover:text-accent transition-all duration-500 shadow-lg shadow-accent/10"
+                        className="w-full h-14 bg-accent text-primary font-syne font-bold text-xs tracking-[3px] uppercase rounded-xl mt-6 hover:bg-secondary hover:text-accent transition-all duration-300 shadow-lg shadow-accent/10 hover:shadow-secondary/20 transform hover:-translate-y-0.5 active:translate-y-0"
                     >
                         Sign In
                     </button>
 
-                    <button className="w-full h-14 flex items-center justify-center gap-3 bg-white border border-accent/5 rounded-2xl text-[10px] font-bold text-accent/50 uppercase tracking-widest mt-4 hover:border-secondary transition-all">
-                        <FcGoogle size={18} /> Google Login
+                    {/* Elegant Divider */}
+                    <div className="relative flex py-5 items-center">
+                        <div className="flex-grow border-t border-accent/5"></div>
+                        <span className="flex-shrink mx-4 text-accent/30 text-[9px] tracking-widest uppercase font-bold">Or connect with</span>
+                        <div className="flex-grow border-t border-accent/5"></div>
+                    </div>
+
+                    {/* Google Sign In */}
+                    <button
+                        onClick={() => googleLogin()}
+                        className="w-full h-13 flex items-center justify-center gap-3 bg-white border border-accent/10 rounded-xl text-[10px] font-bold text-accent/60 uppercase tracking-widest hover:border-secondary hover:bg-accent/[0.02] transition-all"
+                    >
+                        <FcGoogle size={18} /> Google Portal
                     </button>
+
+                    {/* Sign Up Navigation Footer */}
+                    <div className="mt-8 text-center">
+                        <p className="text-xs text-accent/50">
+                            Don't have an account?{" "}
+                            <button
+                                onClick={() => navigate("/register")}
+                                className="font-bold text-accent hover:text-secondary transition-colors duration-200 underline underline-offset-4 decoration-secondary/30"
+                            >
+                                Register Here
+                            </button>
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            {/* Realistic Animations */}
-            <style>
-                {`
+            <style>{`
                 @keyframes drawPath {
-                    from { stroke-dashoffset: 200; }
+                    from { stroke-dashoffset: 240; }
                     to { stroke-dashoffset: 0; }
                 }
-
                 @keyframes planeMove {
-                    0% {
-                        offset-distance: 0%;
-                        opacity: 0;
-                    }
-                    10% { opacity: 1; }
-                    90% { opacity: 1; }
-                    100% {
-                        offset-distance: 100%;
-                        opacity: 0;
-                    }
+                    0% { offset-distance: 0%; opacity: 0; }
+                    8% { opacity: 1; }
+                    92% { opacity: 1; }
+                    100% { offset-distance: 100%; opacity: 0; }
                 }
-
                 .plane-container {
                     offset-path: path("M 1100 600 Q 800 500 700 300 T 400 100");
                     position: absolute;
-                    width: 40px;
-                    height: 40px;
+                    width: 32px;
+                    height: 32px;
                 }
-                `}
-            </style>
+            `}</style>
         </div>
     );
 }

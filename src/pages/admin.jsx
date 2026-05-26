@@ -7,6 +7,7 @@ import AdminReviewPage from "./admin/adminReviewPage";
 import AdminUserPage from "./admin/adminUserPage";
 import AdminDashboard from "./admin/adminDashboard";
 import { PiStudent } from "react-icons/pi";
+import AdminAppointment from "./admin/adminAppointment";
 
 export default function Admin() {
 
@@ -79,6 +80,14 @@ export default function Admin() {
                         )}
                     </Link>
 
+                    <Link to="/admin/appointment" className={linkStyle("/admin/appointment")}>
+                        <PiStudent className="text-base flex-shrink-0" />
+                        <span>Appointment</span>
+                        {location.pathname === "/admin/appointment" && (
+                            <span className="ml-auto w-[5px] h-[5px] rounded-full bg-secondary" />
+                        )}
+                    </Link>
+
                     <Link to="/admin/reviews" className={linkStyle("/admin/reviews")}>
                         <MdOutlineRateReview className="text-base flex-shrink-0" />
                         <span>Reviews</span>
@@ -111,6 +120,7 @@ export default function Admin() {
                         <Routes>
                             <Route path="/" element={<AdminDashboard />} />
                             <Route path="/students" element={<AdminStudentPage />} />
+                            <Route path="/appointment" element={<AdminAppointment />} />
                             <Route path="/reviews" element={<AdminReviewPage />} />
                             <Route path="/users" element={<AdminUserPage />} />
                         </Routes>
