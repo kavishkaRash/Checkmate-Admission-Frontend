@@ -1,7 +1,6 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import HomePage from './pages/HomePage'
 import StudentVisaKoreaPage from './pages/studentVisaKoreaPage.jsx'
 import Faq from './pages/faqPage'
 import ContactUs from './pages/contactUsPage'
@@ -11,6 +10,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import { Toaster } from 'react-hot-toast'
 import RegisterPage from './pages/register.jsx'
 import AppointmentPage from './pages/appoinmentPage.jsx'
+import HomePage from './pages/HomePage.jsx'
 
 function App() {
 
