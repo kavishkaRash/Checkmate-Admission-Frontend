@@ -10,7 +10,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import { Toaster } from 'react-hot-toast'
 import RegisterPage from './pages/register.jsx'
 import AppointmentPage from './pages/appoinmentPage.jsx'
-import HomePage from './pages/HomePage.jsx'
+import HomePage from './pages/homePage.jsx'
 import AboutUs from './pages/aboutUs.jsx'
 
 function App() {
