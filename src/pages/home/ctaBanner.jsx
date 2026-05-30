@@ -1,4 +1,7 @@
 import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { HiCheckCircle, HiArrowRight } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 export default function CTABanner() {
     return (
@@ -43,14 +46,14 @@ export default function CTABanner() {
                                 Don't get lost in complex documentation. Let Checkmate handle your visa, university application, and interview prep with a <span className="text-white font-semibold">98% success rate</span>.
                             </p>
 
-                            {/* Trust Badges */}
+                            {/* Trust Badges — ── UPDATED WITH HIGH-END CHECK ICONS ── */}
                             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 pt-4 border-t border-white/5">
-                                <div className="flex items-center gap-2">
-                                    <span className="text-emerald-400 text-lg">✓</span>
+                                <div className="flex items-center gap-2 group/trust">
+                                    <HiCheckCircle className="text-emerald-400 text-lg transition-transform duration-300 group-hover/trust:scale-110" />
                                     <span className="text-xs text-slate-400 font-bold uppercase tracking-wider">Free First Consultation</span>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-emerald-400 text-lg">✓</span>
+                                <div className="flex items-center gap-2 group/trust">
+                                    <HiCheckCircle className="text-emerald-400 text-lg transition-transform duration-300 group-hover/trust:scale-110" />
                                     <span className="text-xs text-slate-400 font-bold uppercase tracking-wider">Zero Hidden Fees</span>
                                 </div>
                             </div>
@@ -60,20 +63,19 @@ export default function CTABanner() {
                         <div className="lg:col-span-5 w-full flex flex-col items-center lg:items-end space-y-4">
                             
                             {/* Primary Button */}
-                            <button className="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl font-black text-xs uppercase tracking-widest shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden text-center">
+                            <Link to = "/appointment" className="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl font-black text-xs uppercase tracking-widest shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden text-center">
                                 <span className="absolute inset-0 w-full h-full bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                 <span className="relative flex items-center justify-center gap-2">
                                     Book Free Consultation
-                                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
+                                    <HiArrowRight className="text-[14px] stroke-[2.5] transform group-hover:translate-x-1 transition-transform duration-300" />
                                 </span>
-                            </button>
+                            </Link>
 
-                            {/* Secondary Button */}
-                            <button className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-slate-200 text-center backdrop-blur-sm">
+                            {/* Secondary Button — ── UPDATED WITH WHATSAPP BRAND GLOW ── */}
+                            <Link to="https://wa.me/+94776022231" className="group/wa w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-[#25D366]/10 border border-white/10 hover:border-[#25D366]/30 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-slate-200 hover:text-white text-center backdrop-blur-sm flex items-center justify-center gap-2.5">
+                                <FaWhatsapp className="text-[16px] text-slate-400 group-hover/wa:text-[#25D366] transition-colors duration-300" />
                                 Talk to an Expert via WhatsApp
-                            </button>
+                            </Link>
 
                             {/* Live Active Notice */}
                             <div className="flex items-center gap-2 text-[10px] text-slate-500 font-bold uppercase tracking-wider pt-2">

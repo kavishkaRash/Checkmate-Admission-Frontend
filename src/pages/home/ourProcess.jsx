@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -314,10 +315,10 @@ export default function OurProcess() {
           <p className="text-[#0d1b2a]/50 text-xs font-medium">
             Join <span className="text-[#0d1b2a] font-bold">300+ Sri Lankan students</span> already studying in Korea 🇰🇷
           </p>
-          <button className="group inline-flex items-center gap-2 bg-[#0d1b2a] hover:bg-[#2563eb] text-white font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#2563eb]/20 active:translate-y-0">
+          <Link to="/appointment" className="group inline-flex items-center gap-2 bg-[#0d1b2a] hover:bg-[#2563eb] text-white font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#2563eb]/20 active:translate-y-0">
             Begin Free Evaluation
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </button>
+          </Link>
         </div>
 
       </div>

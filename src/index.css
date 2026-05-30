@@ -8,6 +8,10 @@
   --color-secondary: #00ffef;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .animate-scroll {
   animation: scroll 35s linear infinite;
 }

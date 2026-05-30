@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import StudentVisaKoreaPage from './pages/studentVisaKoreaPage.jsx'
-import Faq from './pages/faqPage'
+import Faq from './pages/aboutUs.jsx'
 import ContactUs from './pages/contactUsPage'
 import Admin from './pages/admin.jsx'
 import LoginPage from './pages/loginPage.jsx'
@@ -11,6 +11,7 @@ import { Toaster } from 'react-hot-toast'
 import RegisterPage from './pages/register.jsx'
 import AppointmentPage from './pages/appoinmentPage.jsx'
 import HomePage from './pages/HomePage.jsx'
+import AboutUs from './pages/aboutUs.jsx'
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/korea-student-visa" element={<StudentVisaKoreaPage />} />
-            <Route path="/faq" element={<Faq />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
             <Route path='/appointment' element={<AppointmentPage />} />

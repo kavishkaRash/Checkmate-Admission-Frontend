@@ -44,7 +44,7 @@ export default function Header() {
                     {[
                         { name: "Home", path: "/" },
                         { name: "Student Visa Korea", path: "/korea-student-visa" },
-                        { name: "FAQ", path: "/faq" },
+                        { name: "About", path: "/about" },
                         { name: "Contact", path: "/contact" }
                     ].map((item) => (
                         <Link 

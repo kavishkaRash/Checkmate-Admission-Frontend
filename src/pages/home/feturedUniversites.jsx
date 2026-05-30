@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { HiMapPin, HiAcademicCap, HiCalendarDays, HiBolt, HiArrowRight } from "react-icons/hi2";
 
 const universities = [
   {
@@ -12,7 +13,6 @@ const universities = [
     students: "80+",
     desc: "One of Korea's most internationally active universities, offering world-class language and degree programs in Incheon Free Economic Zone.",
     ranking: "Top 10 National",
-    // Beautiful Historic-Modern Campus Building
     image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop",
   },
   {
@@ -26,7 +26,6 @@ const universities = [
     students: "60+",
     desc: "Founded in 1398, SKKU is one of Asia's oldest and most prestigious universities, located in the heart of Seoul.",
     ranking: "#1 Samsung Partner",
-    // Classic Brick University Architecture
     image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=600&auto=format&fit=crop",
   },
   {
@@ -40,7 +39,6 @@ const universities = [
     students: "70+",
     desc: "Highly international-friendly university in Daejeon with a strong track record of Sri Lankan student visa approvals.",
     ranking: "Best Visa Rate",
-    // FIXED: Super Clean Modern Concrete/Glass University Facade
     image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=600&auto=format&fit=crop",
   },
   {
@@ -54,19 +52,15 @@ const universities = [
     students: "40+",
     desc: "A dynamic research university in Seoul known for its vibrant campus life, strong engineering and business faculties.",
     ranking: "Top Seoul Uni",
-    // FIXED: Premium Editorial Campus Library Building Exterior
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop",
   },
 ];
 
-// Custom Mini South Korea Flag Accent (High-End SVG)
-const KoreaFlagIcon = () => (
-  <svg viewBox="0 0 24 16" className="w-5 h-3.5 rounded-sm shadow-xs inline-block flex-shrink-0">
-    <rect width="24" height="16" fill="#ffffff" />
-    <circle cx="12" cy="8" r="4" fill="#cd2e3a" />
-    <path d="M12 8A4 4 0 0 1 12 4A4 4 0 0 0 12 8" fill="#0047a0" />
-    <path d="M9.5 5.5l1-1M13.5 11.5l1-1M9.5 10.5l1 1M13.5 4.5l1 1" stroke="#000000" strokeWidth="1" strokeLinecap="round" />
-  </svg>
+// High-End Minimalist Korea Badge
+const KoreaBadge = () => (
+  <span className="inline-flex items-center gap-1 bg-slate-100 border border-slate-200 text-[#0d1b2a] text-[9px] font-black px-1.5 py-0.5 rounded-md flex-shrink-0">
+    KR
+  </span>
 );
 
 function UniCard({ uni, index }) {
@@ -102,8 +96,6 @@ function UniCard({ uni, index }) {
 
       {/* CARD IMAGE AREA */}
       <div className="relative h-48 bg-[#0d1b2a]/10 overflow-hidden border-b border-[#0d1b2a]/5">
-
-        {/* Real University Photo with Smooth Hover Zoom */}
         <img
           src={uni.image}
           alt={uni.name}
@@ -111,23 +103,22 @@ function UniCard({ uni, index }) {
           loading="lazy"
         />
 
-        {/* Improved High-Contrast Overlay Gradient (Fixed Legibility) */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2a]/95 via-[#0d1b2a]/40 to-[#0d1b2a]/30 group-hover:via-[#0d1b2a]/50 transition-all duration-500" />
 
-        {/* Glassmorphism Acronym Overlay (Bottom-Left) */}
+        {/* Glassmorphism Acronym Overlay */}
         <div className="absolute bottom-3 left-4 z-10">
           <span className="font-mono font-black text-2xl tracking-tighter text-white drop-shadow-md">
             {uni.shortName}
           </span>
         </div>
 
-        {/* Dynamic Badge - Top Left */}
+        {/* Dynamic Badge */}
         <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 text-[10px] font-black px-2.5 py-1 rounded-md bg-white text-[#0d1b2a] border border-white/20 shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-[#2563eb] animate-pulse" />
           {uni.highlight.toUpperCase()}
         </div>
 
-        {/* Students Count Badge - Top Right */}
+        {/* Students Count Badge */}
         <div className="absolute top-3 right-3 z-10 bg-black/30 text-white border border-white/10 text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wide backdrop-blur-md">
           {uni.students} Students
         </div>
@@ -135,20 +126,19 @@ function UniCard({ uni, index }) {
 
       {/* CARD BODY */}
       <div className="p-5 flex flex-col flex-1">
-
         {/* Title Block */}
         <div className="mb-3.5">
           <div className="flex items-start justify-between gap-3 mb-1.5">
             <h3 className="font-black text-[15px] text-[#0d1b2a] leading-tight tracking-tight group-hover:text-[#2563eb] transition-colors duration-300">
               {uni.name}
             </h3>
-            <KoreaFlagIcon />
+            <KoreaBadge />
           </div>
-          <div className="flex items-center gap-1.5 text-[10px] text-[#0d1b2a]/40 font-bold tracking-wide">
-            <span className="text-[#2563eb]">📍</span>
-            <span>{uni.location.toUpperCase()}</span>
+          <div className="flex items-center gap-1 text-[10px] text-[#0d1b2a]/40 font-bold tracking-wide">
+            <HiMapPin className="text-[#2563eb] text-xs flex-shrink-0" />
+            <span className="truncate">{uni.location.toUpperCase()}</span>
             <span className="text-[#0d1b2a]/20">·</span>
-            <span className="text-[#2563eb] font-extrabold">{uni.ranking}</span>
+            <span className="text-[#2563eb] font-extrabold flex-shrink-0">{uni.ranking}</span>
           </div>
         </div>
 
@@ -181,9 +171,10 @@ function UniCard({ uni, index }) {
           </div>
         </div>
 
-        {/* Card Main Action CTA */}
-        <button className="w-full text-[10px] font-black uppercase tracking-widest py-3 rounded-xl border border-[#0d1b2a]/10 text-[#0d1b2a]/60 transition-all duration-300 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white hover:shadow-md hover:shadow-[#2563eb]/10">
-          Learn More →
+        {/* Card Main Action CTA — Updated Arrow */}
+        <button className="group/btn w-full text-[10px] font-black uppercase tracking-widest py-3 rounded-xl border border-[#0d1b2a]/10 text-[#0d1b2a]/60 transition-all duration-300 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white hover:shadow-md hover:shadow-[#2563eb]/10 flex items-center justify-center gap-1.5">
+          Learn More 
+          <HiArrowRight className="text-xs transform group-hover/btn:translate-x-1 transition-transform duration-300" />
         </button>
       </div>
     </div>
@@ -193,7 +184,7 @@ function UniCard({ uni, index }) {
 export default function FeaturedUniversities() {
   return (
     <section className="bg-[#ffffff] text-[#0d1b2a] py-24 px-4 sm:px-6 md:px-16 lg:px-32 relative overflow-hidden border-t border-[#0d1b2a]/5">
-
+      
       {/* Sync Micro Tech Grid Layout */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.012]"
         style={{
@@ -212,7 +203,6 @@ export default function FeaturedUniversities() {
         {/* ── HEADER ── */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
-            {/* Live Synchronized Header Badge */}
             <div className="inline-flex items-center gap-2.5 bg-white border border-[#0d1b2a]/10 text-[#2563eb] text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-xl mb-6 shadow-xs">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2563eb]/40 opacity-75" />
@@ -235,7 +225,7 @@ export default function FeaturedUniversities() {
             </p>
             <button className="group self-start lg:self-end inline-flex items-center gap-2 bg-[#0d1b2a] hover:bg-[#2563eb] text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#2563eb]/10 hover:-translate-y-0.5">
               View All Universities
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <HiArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
         </div>
@@ -247,17 +237,14 @@ export default function FeaturedUniversities() {
           ))}
         </div>
 
-        {/* ── BOTTOM FEATURE STRIP ── */}
+        {/* ── BOTTOM FEATURE STRIP — UPDATED WITH HEROICONS ── */}
         <div className="mt-14 bg-[#0d1b2a] rounded-2xl border border-white/[0.04] overflow-hidden
           grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06] shadow-xl shadow-[#0d1b2a]/10">
 
           {/* Item 1: Programs */}
           <div className="p-6 flex items-center gap-4 hover:bg-white/[0.01] transition-colors duration-300">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-[#2563eb] fill-none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
-              </svg>
+              <HiAcademicCap className="text-xl text-[#2563eb]" />
             </div>
             <div>
               <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Programs Available</div>
@@ -268,12 +255,7 @@ export default function FeaturedUniversities() {
           {/* Item 2: Intakes */}
           <div className="p-6 flex items-center gap-4 hover:bg-white/[0.01] transition-colors duration-300">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-[#2563eb] fill-none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
+              <HiCalendarDays className="text-xl text-[#2563eb]" />
             </div>
             <div>
               <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Intake Periods</div>
@@ -284,9 +266,7 @@ export default function FeaturedUniversities() {
           {/* Item 3: Timeline */}
           <div className="p-6 flex items-center gap-4 hover:bg-white/[0.01] transition-colors duration-300">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-[#2563eb] fill-none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-              </svg>
+              <HiBolt className="text-xl text-[#2563eb]" />
             </div>
             <div>
               <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Admission Timeline</div>

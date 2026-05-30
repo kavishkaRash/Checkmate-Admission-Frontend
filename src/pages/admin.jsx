@@ -9,6 +9,8 @@ import AdminUserPage from "./admin/adminUserPage";
 import AdminDashboard from "./admin/adminDashboard";
 import { PiStudent, PiCalendarCheck } from "react-icons/pi";
 import AdminAppointment from "./admin/adminAppointment";
+import AdminAddNewReview from "./admin/adminAddNewReview";
+import UpdateAddNewReview from "./admin/adminUpdateReview";
 
 export default function Admin() {
     const location = useLocation();
@@ -157,6 +159,8 @@ export default function Admin() {
                             <Route path="/students" element={<AdminStudentPage />} />
                             <Route path="/appointment" element={<AdminAppointment />} />
                             <Route path="/reviews" element={<AdminReviewPage />} />
+                            <Route path="/add-review" element={<AdminAddNewReview/>} />
+                            <Route path="/update-reviews" element={<UpdateAddNewReview />} />
                             <Route path="/users" element={<AdminUserPage />} />
                         </Routes>
                     </div>
