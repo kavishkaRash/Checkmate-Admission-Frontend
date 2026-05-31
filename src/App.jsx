@@ -12,6 +12,7 @@ import RegisterPage from './pages/register.jsx'
 import AppointmentPage from './pages/appoinmentPage.jsx'
 import HomePage from './pages/homePage.jsx'
 import AboutUs from './pages/aboutUs.jsx'
+import ProtectedRoute from './components/protectedRoute.jsx'
 
 function App() {
 
@@ -30,7 +31,11 @@ function App() {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
             <Route path='/appointment' element={<AppointmentPage />} />
-            <Route path='/admin/*' element={<Admin />} />
+            <Route path='/admin/*' element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            } />
 
             <Route path="*" element={<h1>404 Not Found</h1>} />
           </Routes>
