@@ -3,6 +3,7 @@ import Header from "../components/header";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
+import Footer from "../components/footer";
 
 export default function ContactUs() {
     const [formData, setFormData] = useState({
@@ -312,7 +313,7 @@ export default function ContactUs() {
                     </button>
                 </div>
             </div>
-
+            <Footer />
         </div>
     );
 }
