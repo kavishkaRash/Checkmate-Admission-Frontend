@@ -8,7 +8,7 @@ export default function UniversityModal({ selectedUni, onClose }) {
       <div className="absolute inset-0" onClick={onClose} />
       <div className="relative w-full max-w-2xl bg-white rounded-t-3xl shadow-2xl z-10 overflow-hidden max-h-[85vh] flex flex-col">
         
-        {/* Modal Header */}
+
         <div className={`relative h-48 bg-gradient-to-r ${selectedUni.bgGradient} p-6 sm:p-8 flex items-end`}>
           <div className="absolute inset-0 opacity-15 mix-blend-overlay">
             <img src={selectedUni.image} alt="" className="w-full h-full object-cover" />
@@ -24,7 +24,7 @@ export default function UniversityModal({ selectedUni, onClose }) {
           </div>
         </div>
 
-        {/* Modal Content */}
+
         <div className="p-6 sm:p-8 overflow-y-auto space-y-6 flex-grow">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex items-center gap-3 bg-slate-50 border border-slate-100 rounded-xl p-3.5">
@@ -83,7 +83,7 @@ export default function UniversityModal({ selectedUni, onClose }) {
           </div>
         </div>
 
-        {/* Modal Footer */}
+        
         <div className="p-6 border-t border-slate-100 bg-slate-50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left hidden sm:block">
             <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Consultation Fee</div>

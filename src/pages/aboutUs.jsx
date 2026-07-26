@@ -14,7 +14,7 @@ import { FaPassport } from "react-icons/fa6";
 import Header from "../components/header";
 import Footer from "../components/footer";
 
-// ── Scroll reveal hook ─────────────────────────────────────────────────────
+
 function useReveal(delay = 0) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -34,7 +34,7 @@ function useReveal(delay = 0) {
   return [ref, visible];
 }
 
-// ── Animated counter ───────────────────────────────────────────────────────
+
 function Counter({ target, suffix = "", duration = 1500 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -59,7 +59,7 @@ function Counter({ target, suffix = "", duration = 1500 }) {
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
-// ── Team data (With Premium Headshot Images) ──────────────────────────────────
+
 const team = [
   {
     name: "Kavishka Rajapaksha",
@@ -98,7 +98,7 @@ const colorMap = {
   purple: { bg: "bg-purple-50", border: "border-purple-100", text: "text-purple-600", bar: "from-purple-500 to-pink-500" },
 };
 
-// ── Values data (With Premium Icons) ───────────────────────────────────────
+
 const values = [
   { icon: <HiSparkles className="text-blue-600 text-lg" />, title: "Precision",       desc: "Every document, every detail — reviewed twice before submission. We don't do sloppy work." },
   { icon: <HiScale className="text-blue-600 text-lg" />, title: "Transparency",    desc: "Zero hidden fees. Zero surprises. What we quote is exactly what you pay — from day one." },
@@ -108,7 +108,7 @@ const values = [
   { icon: <HiGlobeAsiaAustralia className="text-blue-600 text-lg" />, title: "Global Vision",  desc: "We believe every Sri Lankan student deserves access to world-class education abroad." },
 ];
 
-// ── Section badge ──────────────────────────────────
+
 function Badge({ label }) {
   return (
     <div className="inline-flex items-center gap-2.5 bg-white/90 border border-slate-200 text-blue-600 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase px-4 py-2 rounded-xl mb-6 shadow-sm backdrop-blur-sm">
@@ -121,7 +121,7 @@ function Badge({ label }) {
   );
 }
 
-// ── Main Page ──────────────────────────────────────────────────────────────
+
 export default function AboutUs() {
   const [heroRef, heroVisible] = useReveal(0);
 
@@ -129,10 +129,10 @@ export default function AboutUs() {
     <div className="bg-[#f8fafc] text-[#0f172a] font-sans overflow-x-hidden select-none">
 
         <Header />
-      {/* ── HERO WITH KOREAN BACKGROUND ── */}
+
       <section className="relative min-h-[65vh] flex items-center px-4 sm:px-6 md:px-16 lg:px-32 py-36 overflow-hidden bg-[#0f172a]">
 
-        {/* Right Side Premium Korean Faded Image Layout */}
+
         <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 opacity-15 md:opacity-30 pointer-events-none">
             <img 
                 src="https://www.drmattlynch.com/wp-content/uploads/2025/04/pexels-photo-267885.jpeg" 
@@ -143,11 +143,11 @@ export default function AboutUs() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent" />
         </div>
 
-        {/* Radial glow */}
+
         <div className="absolute top-0 left-1/3 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none z-10"
           style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 65%)" }} />
 
-        {/* Grid texture */}
+
         <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
           style={{
             backgroundImage: "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
@@ -178,11 +178,11 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* Bottom fade to body */}
+
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#f8fafc] pointer-events-none z-10" />
       </section>
 
-      {/* ── STATS COUNTER GRID ── */}
+
       <section className="px-4 sm:px-6 md:px-16 lg:px-32 -mt-12 pb-20 relative z-30">
         <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
@@ -201,7 +201,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* ── OUR STORY ── */}
+
       <section className="px-4 sm:px-6 md:px-16 lg:px-32 py-12 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.005]"
           style={{
@@ -211,7 +211,7 @@ export default function AboutUs() {
         />
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left — Visual Quote Box */}
+
           <div className="relative">
             <div className="bg-[#0f172a] rounded-3xl p-8 sm:p-10 relative overflow-hidden border border-slate-800 shadow-xl">
               <div className="absolute top-0 right-0 w-64 h-64 pointer-events-none"
@@ -223,7 +223,7 @@ export default function AboutUs() {
               
             </div>
 
-            {/* Floating stats card */}
+
             <div className="absolute -bottom-6 -right-2 bg-white border border-slate-200 rounded-2xl p-5 shadow-xl hidden sm:block">
               <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Founded</div>
               <div className="text-2xl font-black text-[#0f172a]">2019</div>
@@ -231,7 +231,7 @@ export default function AboutUs() {
             </div>
           </div>
 
-          {/* Right — Story Text Content */}
+
           <div>
             <Badge label="Our Story" />
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-[1.1] text-[#0f172a] mb-6">
@@ -252,7 +252,7 @@ export default function AboutUs() {
               </p>
             </div>
 
-            {/* Timeline Graphic Area */}
+
             <div className="mt-8 space-y-4">
               {[
                 { year: "2019", event: "Checkmate Admission founded in Colombo" },
@@ -276,7 +276,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* ── MISSION & VISION ── */}
+
       <section className="bg-[#0f172a] py-24 px-4 sm:px-6 md:px-16 lg:px-32 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] pointer-events-none"
           style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.12) 0%, transparent 70%)" }} />
@@ -297,7 +297,7 @@ export default function AboutUs() {
                 language, process complexity.
               </p>
 
-              {/* Mission pillars */}
+
               <div className="space-y-4">
                 {[
                   { icon: <FaPassport className="text-blue-400 text-base" />, title: "Eliminate Barriers",   desc: "Simplify the complex Korean visa and admission process" },
@@ -317,7 +317,7 @@ export default function AboutUs() {
               </div>
             </div>
 
-            {/* Vision card block */}
+
             <div className="bg-white/[0.02] border border-white/5 rounded-3xl p-6 sm:p-8 backdrop-blur-sm">
               <div className="text-[10px] font-bold text-blue-400 tracking-widest uppercase mb-4">Our Vision</div>
               <p className="text-white text-xl sm:text-2xl font-black leading-[1.25] mb-8">
@@ -344,7 +344,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* ── VALUES SECTION (With Modern Interactive Grid) ── */}
+
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32 relative overflow-hidden bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto relative z-10">
 
@@ -375,7 +375,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* ── PREMIUM TEAM SECTION ── */}
+
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32 relative overflow-hidden bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto relative z-10">
 
@@ -403,10 +403,10 @@ export default function AboutUs() {
                   key={i}
                   className="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-500 cursor-default relative flex flex-col"
                 >
-                  {/* Top Animated Color Bar */}
+
                   <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${c.bar} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-10`} />
 
-                  {/* Member Image Container */}
+
                   <div className="h-56 bg-slate-50 overflow-hidden relative">
                      <img 
                         src={member.image} 
@@ -416,7 +416,7 @@ export default function AboutUs() {
                      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-80" />
                   </div>
 
-                  {/* Details */}
+
                   <div className="p-5 pt-2 flex-grow flex flex-col justify-between">
                     <div>
                         <div className={`text-[9px] font-bold uppercase tracking-wider mb-1 ${c.text}`}>{member.role}</div>
@@ -431,7 +431,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* ── CTA STRIP SECTION ── */}
+
       <section className="py-16 px-4 sm:px-6 md:px-16 lg:px-32 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto">
           <div className="bg-[#0f172a] rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden border border-slate-800 shadow-xl">

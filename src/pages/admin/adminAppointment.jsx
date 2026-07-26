@@ -42,7 +42,7 @@ export default function AdminAppointment() {
     return (
         <div className="w-full min-h-screen bg-[#FDFDFD] p-4 lg:p-10 selection:bg-secondary selection:text-accent font-outfit">
             
-            {/* Modal Setup */}
+
             <AppointmentInfoModal 
                 selectedAppointment={selectedAppointment} 
                 isModelOpen={isModelOpen} 
@@ -52,7 +52,7 @@ export default function AdminAppointment() {
 
             <div className="max-w-[1600px] mx-auto">
 
-                {/* --- HEADER --- */}
+
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
                     <div className="animate-in fade-in slide-in-from-left duration-700">
                         <div className="flex items-center gap-3 mb-2">
@@ -64,7 +64,7 @@ export default function AdminAppointment() {
                         </h1>
                     </div>
 
-                    {/* Stats Card */}
+
                     <div className="bg-white border border-accent/5 p-4 rounded-2xl flex items-center gap-4 shadow-sm">
                         <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center text-secondary">
                             <IoCalendarOutline size={20} />
@@ -79,10 +79,10 @@ export default function AdminAppointment() {
                     </div>
                 </div>
 
-                {/* --- DATA VIEW CONTAINER --- */}
+
                 <div className="bg-white border border-accent/5 rounded-[2rem] lg:rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.02)] overflow-hidden">
 
-                    {/* Desktop Table View */}
+
                     <div className="hidden lg:block overflow-x-auto custom-scrollbar">
                         <table className="w-full border-collapse min-w-[1200px]">
                             <thead className="bg-accent/[0.01] border-b border-accent/5 text-[10px] uppercase tracking-[3px] font-black text-accent/30">
@@ -155,7 +155,7 @@ export default function AdminAppointment() {
                         </table>
                     </div>
 
-                    {/* Mobile List View */}
+
                     <div className="lg:hidden divide-y divide-accent/5">
                         {isLoading ? (
                             <div className="py-20 flex justify-center"><Loader /></div>
@@ -192,7 +192,7 @@ export default function AdminAppointment() {
                                         </div>
                                     </div>
 
-                                    {/* Action Call Controls */}
+
                                     <div className="flex gap-2 mt-4" onClick={(e) => e.stopPropagation()}>
                                         <a
                                             href={`tel:${item.phoneNumber}`}

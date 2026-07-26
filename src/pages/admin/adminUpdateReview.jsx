@@ -10,7 +10,6 @@ import {
 } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa";
 
-// ── YouTube ID helper ──────────────────────────────────────────────────────
 const getYouTubeId = (url) => {
   const match = url?.match(
     /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([\w-]{11})/
@@ -18,7 +17,7 @@ const getYouTubeId = (url) => {
   return match ? match[1] : null;
 };
 
-// ── Field wrapper ──────────────────────────────────────────────────────────
+
 function Field({ label, icon, children, hint }) {
   return (
     <div>
@@ -32,7 +31,7 @@ function Field({ label, icon, children, hint }) {
   );
 }
 
-// ── Star rating ────────────────────────────────────────────────────────────
+
 function StarRating({ value, onChange }) {
   const [hovered, setHovered] = useState(0);
   return (
@@ -60,10 +59,10 @@ function StarRating({ value, onChange }) {
 
 const inputCls = "w-full bg-slate-50 border border-slate-200 text-[#0f172a] placeholder-slate-300 text-sm font-medium px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all duration-200";
 
-// ── Main ───────────────────────────────────────────────────────────────────
+
 export default function UpdateAddNewReview() {
   const navigate = useNavigate();
-  const { state: existing } = useLocation(); // pre-filled data from navigate state
+  const { state: existing } = useLocation(); 
 
   const [form, setForm] = useState({
     reviewId:   existing?.reviewId   || "",
@@ -129,7 +128,7 @@ export default function UpdateAddNewReview() {
     <div className="min-h-screen bg-[#f8fafc] p-6">
       <div className="max-w-5xl mx-auto">
 
-        {/* ── PAGE HEADER ── */}
+
         <div className="flex items-center gap-4 mb-8">
           <button
             onClick={() => navigate("/admin/reviews")}
@@ -145,7 +144,7 @@ export default function UpdateAddNewReview() {
             <h1 className="text-2xl font-black text-[#0f172a] tracking-tight">Update Review</h1>
           </div>
 
-          {/* Existing review indicator */}
+
           {existing && (
             <div className="ml-auto flex items-center gap-2 bg-amber-50 border border-amber-100 px-3 py-2 rounded-xl">
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
@@ -156,10 +155,10 @@ export default function UpdateAddNewReview() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          {/* ── LEFT — FORM ── */}
+
           <div className="lg:col-span-2 space-y-6">
 
-            {/* Card 1 — Student Info */}
+
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
               <h3 className="text-sm font-black text-[#0f172a] mb-5 flex items-center gap-2">
                 <span className="w-6 h-6 bg-amber-500 rounded-lg flex items-center justify-center text-white text-[10px] font-black">1</span>
@@ -233,7 +232,7 @@ export default function UpdateAddNewReview() {
               </div>
             </div>
 
-            {/* Card 2 — Review Content */}
+
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
               <h3 className="text-sm font-black text-[#0f172a] mb-5 flex items-center gap-2">
                 <span className="w-6 h-6 bg-amber-500 rounded-lg flex items-center justify-center text-white text-[10px] font-black">2</span>
@@ -257,7 +256,7 @@ export default function UpdateAddNewReview() {
               </div>
             </div>
 
-            {/* Card 3 — YouTube */}
+
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
               <h3 className="text-sm font-black text-[#0f172a] mb-5 flex items-center gap-2">
                 <span className="w-6 h-6 bg-red-500 rounded-lg flex items-center justify-center text-white text-[10px]">
@@ -277,7 +276,7 @@ export default function UpdateAddNewReview() {
             </div>
           </div>
 
-          {/* ── RIGHT — PREVIEW ── */}
+
           <div className="space-y-5">
             <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm sticky top-6">
               <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
@@ -285,7 +284,7 @@ export default function UpdateAddNewReview() {
                 <span className="text-[10px] font-bold text-amber-500 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-lg">Editing</span>
               </div>
 
-              {/* Thumbnail */}
+
               <div className="relative h-40 bg-[#0f172a] overflow-hidden">
                 {ytId ? (
                   <img
@@ -311,7 +310,7 @@ export default function UpdateAddNewReview() {
                 )}
               </div>
 
-              {/* Preview body */}
+
               <div className="p-5">
                 <div className="flex gap-0.5 mb-3">
                   {[...Array(Number(form.rating))].map((_, i) => (
@@ -332,7 +331,7 @@ export default function UpdateAddNewReview() {
                 </div>
               </div>
 
-              {/* Action buttons */}
+
               <div className="px-5 pb-5 space-y-2">
                 <button
                   onClick={updateReview}

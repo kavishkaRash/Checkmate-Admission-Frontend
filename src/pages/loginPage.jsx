@@ -61,7 +61,7 @@ export default function LoginPage() {
     return (
         <div className="w-full min-h-screen bg-accent flex items-center justify-center relative overflow-x-hidden selection:bg-secondary selection:text-accent font-outfit p-4 lg:p-0">
             
-            {/* Dynamic Flight Animation Background */}
+
             <div className="absolute inset-0 pointer-events-none z-0">
                 <svg className="w-full h-full opacity-15" viewBox="0 0 1000 1000" preserveAspectRatio="none">
                     <path
@@ -81,14 +81,14 @@ export default function LoginPage() {
                         />
                     </div>
                 </div>
-                {/* Modern subtle ambient glows */}
+
                 <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-secondary/10 blur-[150px]" />
                 <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-secondary/5 blur-[130px]" />
             </div>
 
             <div className="w-full max-w-[1240px] flex flex-col lg:flex-row items-center justify-between gap-12 lg:px-16 z-10 my-8 lg:my-0">
                 
-                {/* Left Hero Side */}
+
                 <div className="flex flex-col max-w-lg text-center lg:text-left items-center lg:items-start">
                     <div className="flex items-center gap-4 mb-6">
                         <div className="h-[1px] w-12 bg-secondary/40 hidden lg:block" />
@@ -105,7 +105,7 @@ export default function LoginPage() {
                     </p>
                 </div>
 
-                {/* Right Form Side - Premium White Glass Card */}
+
                 <div className="w-full max-w-[460px] bg-white/90 backdrop-blur-3xl border border-white/40 rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] p-8 sm:p-10 lg:p-12 relative overflow-hidden group/card transition-all duration-500 hover:shadow-[0_50px_100px_-15px_rgba(0,255,239,0.15)]">
                     <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-secondary to-transparent" />
                     
@@ -115,7 +115,7 @@ export default function LoginPage() {
                     </div>
 
                     <div className="space-y-4">
-                        {/* Email Input */}
+
                         <div className="group relative">
                             <IoMailOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={18} />
                             <input
@@ -126,7 +126,7 @@ export default function LoginPage() {
                             />
                         </div>
 
-                        {/* Password Input */}
+
                         <div className="group relative">
                             <IoLockClosedOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={18} />
                             <input
@@ -137,7 +137,7 @@ export default function LoginPage() {
                             />
                         </div>
 
-                        {/* Forgot Password Link */}
+
                         <div className="flex justify-end pt-1">
                             <button 
                                 onClick={() => navigate("/forgot-password")}
@@ -148,7 +148,7 @@ export default function LoginPage() {
                         </div>
                     </div>
 
-                    {/* Submit Button */}
+
                     <button
                         onClick={login}
                         className="w-full h-14 bg-accent text-primary font-syne font-bold text-xs tracking-[3px] uppercase rounded-xl mt-6 hover:bg-secondary hover:text-accent transition-all duration-300 shadow-lg shadow-accent/10 hover:shadow-secondary/20 transform hover:-translate-y-0.5 active:translate-y-0"
@@ -156,14 +156,14 @@ export default function LoginPage() {
                         Sign In
                     </button>
 
-                    {/* Elegant Divider */}
+
                     <div className="relative flex py-5 items-center">
                         <div className="flex-grow border-t border-accent/5"></div>
                         <span className="flex-shrink mx-4 text-accent/30 text-[9px] tracking-widest uppercase font-bold">Or connect with</span>
                         <div className="flex-grow border-t border-accent/5"></div>
                     </div>
 
-                    {/* Google Sign In */}
+
                     <button
                         onClick={() => googleLogin()}
                         className="w-full h-13 flex items-center justify-center gap-3 bg-white border border-accent/10 rounded-xl text-[10px] font-bold text-accent/60 uppercase tracking-widest hover:border-secondary hover:bg-accent/[0.02] transition-all"
@@ -171,7 +171,7 @@ export default function LoginPage() {
                         <FcGoogle size={18} /> Google Portal
                     </button>
 
-                    {/* Sign Up Navigation Footer */}
+
                     <div className="mt-8 text-center">
                         <p className="text-xs text-accent/50">
                             Don't have an account?{" "}

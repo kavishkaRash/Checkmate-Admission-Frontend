@@ -7,20 +7,20 @@ export default function Footer() {
     return (
         <footer className="bg-[#0f172a] text-white pt-20 pb-10 px-4 sm:px-6 md:px-16 lg:px-32 relative overflow-hidden font-sans border-t border-slate-800">
             
-            {/* Pattern Blueprint Grid */}
+
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
 
-            {/* Subtle Bottom Glow Accent */}
+
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] pointer-events-none z-0"
                 style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(37,99,235,0.08) 0%, transparent 80%)" }}
             />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 
-                {/* ── TOP FOOTER GRID ── */}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-slate-800">
                     
-                    {/* Column 1: Brand Info */}
+
                     <div className="lg:col-span-5 space-y-5">
                         <div className="flex items-center gap-3">
                             <div className="w-12 h-12 flex items-center justify-center tracking-tighter text-white select-none pointer-events-none">
@@ -43,7 +43,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Column 2: Quick Navigation */}
+
                     <div className="lg:col-span-2 space-y-4">
                         <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Explore</h4>
                         <ul className="space-y-2.5 text-xs font-semibold text-slate-400">
@@ -54,7 +54,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 3: Partner Network Shortcuts */}
+
                     <div className="lg:col-span-2 space-y-4">
                         <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Top Universities</h4>
                         <ul className="space-y-2.5 text-xs font-semibold text-slate-400">
@@ -65,11 +65,11 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 4: Contact & Office */}
+
                     <div className="lg:col-span-3 space-y-4">
                         <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Contact Office</h4>
                         <ul className="space-y-4 text-xs font-semibold text-slate-400">
-                            {/* Office Location */}
+
                             <li className="flex items-start gap-3 group">
                                 <span className="text-blue-500 bg-white/5 p-1.5 rounded-lg border border-white/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 mt-0.5">
                                     <HiMapPin className="text-[15px]" />
@@ -78,7 +78,7 @@ export default function Footer() {
                                     Colombo, Western Province,<br />Sri Lanka
                                 </span>
                             </li>
-                            {/* Email */}
+
                             <li className="flex items-center gap-3 group">
                                 <span className="text-blue-500 bg-white/5 p-1.5 rounded-lg border border-white/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                     <HiEnvelope className="text-[15px]" />
@@ -87,7 +87,7 @@ export default function Footer() {
                                     info@checkmate.lk
                                 </a>
                             </li>
-                            {/* Phone */}
+
                             <li className="flex items-center gap-3 group">
                                 <span className="text-blue-500 bg-white/5 p-1.5 rounded-lg border border-white/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                     <HiPhone className="text-[15px]" />
@@ -101,7 +101,7 @@ export default function Footer() {
 
                 </div>
 
-                {/* ── BOTTOM LEGAL & COPYRIGHT ROW ── */}
+
                 <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
                     
                     <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
@@ -117,7 +117,7 @@ export default function Footer() {
                         
                         <span className="hidden sm:inline text-slate-800">·</span>
                         
-                        {/* Social Buttons */}
+
                         <div className="flex items-center gap-3 pt-2 sm:pt-0">
                             <a 
                                 href="https://facebook.com" 

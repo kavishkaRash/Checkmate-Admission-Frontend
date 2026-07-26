@@ -41,7 +41,7 @@ const steps = [
   },
 ];
 
-// High-End Outlined Vector Icons (Synced with Brand Colors)
+
 const StepIcon = ({ type }) => {
   const baseClass = "w-6 h-6 stroke-[#2563eb] fill-none transition-transform duration-500 group-hover:scale-110";
   
@@ -109,15 +109,15 @@ function StepCard({ step, index }) {
       `}
       style={{ transitionDelay: visible ? "0ms" : `${index * 120}ms` }}
     >
-      {/* Top blue accent line on hover */}
+
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full" />
 
-      {/* Ghost step number */}
+
       <div className="absolute -top-2 -right-1 font-black text-[72px] leading-none select-none pointer-events-none text-[#0d1b2a]/[0.02] group-hover:text-[#2563eb]/[0.04] transition-colors duration-500 font-mono">
         {step.num}
       </div>
 
-      {/* Premium SVG Icon Block */}
+
       <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5
         bg-[#0d1b2a]/[0.02] border border-[#0d1b2a]/5
         group-hover:bg-[#2563eb]/[0.06] group-hover:border-[#2563eb]/20 group-hover:scale-105
@@ -125,7 +125,7 @@ function StepCard({ step, index }) {
         <StepIcon type={step.iconType} />
       </div>
 
-      {/* Step label */}
+
       <div className="flex items-center gap-2 mb-3">
         <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563eb]">
           Step {step.num}
@@ -134,19 +134,19 @@ function StepCard({ step, index }) {
         <span className="text-[#0d1b2a]/50 text-[10px] font-bold uppercase tracking-wider">{step.subtitle}</span>
       </div>
 
-      {/* Title */}
+
       <h3 className="text-[17px] font-black text-[#0d1b2a] mb-3 tracking-tight leading-snug
         group-hover:text-[#2563eb] transition-colors duration-300">
         {step.title}
       </h3>
 
-      {/* Desc */}
+
       <p className="text-[12.5px] text-[#0d1b2a]/60 leading-relaxed flex-1 font-medium
         group-hover:text-[#0d1b2a]/80 transition-colors duration-300">
         {step.desc}
       </p>
 
-      {/* Card Footer */}
+
       <div className="mt-5 pt-4 border-t border-[#0d1b2a]/5 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
           {/* Custom Mini Clock SVG */}
@@ -189,12 +189,12 @@ export default function OurProcess() {
       ref={sectionRef}
       className="bg-[#ffffff] text-[#0d1b2a] py-24 px-4 sm:px-6 md:px-16 lg:px-32 relative overflow-hidden"
     >
-      {/* Brand Radial Ambient Glow */}
+
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] pointer-events-none"
         style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.06) 0%, transparent 70%)" }}
       />
 
-      {/* Hero Sync Micro Tech Grid */}
+
       <div className="absolute inset-0 pointer-events-none opacity-[0.015]"
         style={{
           backgroundImage: "linear-gradient(#0d1b2a 1px, transparent 1px), linear-gradient(90deg, #0d1b2a 1px, transparent 1px)",
@@ -204,10 +204,10 @@ export default function OurProcess() {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* ── HEADER ── */}
+
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
-            {/* Live Indicator Badge */}
+
             <div className="inline-flex items-center gap-2.5 bg-white border border-[#0d1b2a]/10 text-[#2563eb] text-[10px] font-bold tracking-widest uppercase px-4 py-2 rounded-xl mb-6 shadow-xs">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2563eb]/40 opacity-75" />
@@ -230,7 +230,7 @@ export default function OurProcess() {
           </p>
         </div>
 
-        {/* ── PROGRESS LINE (Desktop) ── */}
+
         <div className="hidden lg:block relative mb-12">
           <div className="h-px w-full bg-[#0d1b2a]/10 rounded-full" />
           <div
@@ -256,18 +256,18 @@ export default function OurProcess() {
           </div>
         </div>
 
-        {/* ── STEP CARDS GRID ── */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((step, i) => (
             <StepCard key={step.num} step={step} index={i} />
           ))}
         </div>
 
-        {/* ── BOTTOM FEATURE STRIP (All Vector Custom Icons) ── */}
+
         <div className="mt-14 bg-[#0d1b2a] rounded-2xl border border-white/[0.04] overflow-hidden
           grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06] shadow-xl shadow-[#0d1b2a]/10">
           
-          {/* Item 1: Processing Time */}
+
           <div className="p-6 flex items-center gap-4 hover:bg-white/[0.01] transition-colors duration-300">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-[#2563eb] fill-none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -281,7 +281,7 @@ export default function OurProcess() {
             </div>
           </div>
 
-          {/* Item 2: Consultation */}
+
           <div className="p-6 flex items-center gap-4 hover:bg-white/[0.01] transition-colors duration-300">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-[#2563eb] fill-none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -294,7 +294,7 @@ export default function OurProcess() {
             </div>
           </div>
 
-          {/* Item 3: Korea Intake */}
+
           <div className="p-6 flex items-center gap-4 hover:bg-white/[0.01] transition-colors duration-300">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
               <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-[#2563eb] fill-none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -310,7 +310,7 @@ export default function OurProcess() {
 
         </div>
 
-        {/* ── CTA FOOTER ── */}
+
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#0d1b2a]/50 text-xs font-medium">
             Join <span className="text-[#0d1b2a] font-bold">300+ Sri Lankan students</span> already studying in Korea 🇰🇷

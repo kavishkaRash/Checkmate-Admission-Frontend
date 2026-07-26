@@ -42,7 +42,7 @@ export default function RegisterPage() {
     return (
         <div className="w-full min-h-screen bg-accent flex items-center justify-center relative overflow-x-hidden selection:bg-secondary selection:text-accent font-outfit p-4 lg:p-0">
             
-            {/* Dynamic Background Layout */}
+
             <div className="absolute inset-0 pointer-events-none z-0">
                 <svg className="w-full h-full opacity-15" viewBox="0 0 1000 1000" preserveAspectRatio="none">
                     <path
@@ -62,14 +62,14 @@ export default function RegisterPage() {
                         />
                     </div>
                 </div>
-                {/* Modern subtle ambient glows */}
+
                 <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-secondary/10 blur-[150px]" />
                 <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-secondary/5 blur-[130px]" />
             </div>
 
             <div className="w-full max-w-[1240px] flex flex-col lg:flex-row items-center justify-between gap-12 lg:px-16 z-10 my-8 lg:my-0">
                 
-                {/* Left Content Side */}
+
                 <div className="flex flex-col max-w-lg text-center lg:text-left items-center lg:items-start">
                     <div className="flex items-center gap-4 mb-6">
                         <div className="h-[1px] w-12 bg-secondary/40 hidden lg:block" />
@@ -86,7 +86,7 @@ export default function RegisterPage() {
                     </p>
                 </div>
 
-                {/* Right Form Side - Swapped to Premium White/Glass Card Layout */}
+
                 <div className="w-full max-w-[500px] bg-white/90 backdrop-blur-3xl border border-white/40 rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] p-8 sm:p-10 lg:p-12 relative overflow-hidden group/card transition-all duration-500 hover:shadow-[0_50px_100px_-15px_rgba(0,255,239,0.15)]">
                     <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-secondary to-transparent" />
                     
@@ -96,7 +96,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className="space-y-4">
-                        {/* Row: Name Fields */}
+
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="group relative">
                                 <CiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={20} />
@@ -120,7 +120,7 @@ export default function RegisterPage() {
                             </div>
                         </div>
 
-                        {/* Email */}
+
                         <div className="group relative">
                             <IoMailOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={18} />
                             <input
@@ -132,7 +132,7 @@ export default function RegisterPage() {
                             />
                         </div>
 
-                        {/* Mobile */}
+
                         <div className="group relative">
                             <CiMobile1 className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={20} />
                             <input
@@ -144,7 +144,7 @@ export default function RegisterPage() {
                             />
                         </div>
 
-                        {/* Row: Password Fields */}
+
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="group relative">
                                 <IoLockClosedOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-accent/30 group-focus-within:text-secondary transition-colors" size={18} />
@@ -169,7 +169,7 @@ export default function RegisterPage() {
                         </div>
                     </div>
 
-                    {/* CTA Button */}
+
                     <button
                         onClick={register}
                         className="w-full h-14 bg-accent text-primary font-syne font-bold text-xs tracking-[3px] uppercase rounded-xl mt-8 hover:bg-secondary hover:text-accent transition-all duration-300 shadow-lg shadow-accent/10 hover:shadow-secondary/20 transform hover:-translate-y-0.5 active:translate-y-0"
@@ -181,7 +181,7 @@ export default function RegisterPage() {
 
                     
 
-                    {/* Sign In Navigation Footer */}
+
                     <div className="mt-8 text-center">
                         <p className="text-xs text-accent/50">
                             Already have an account?{" "}

@@ -8,7 +8,7 @@ import Loader from "../../components/Loader";
 import { IoClose, IoWarningOutline } from "react-icons/io5";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
-/* ── YouTube ID helper ── */
+
 const getYouTubeId = (url) => {
   const match = url?.match(
     /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([\w-]{11})/
@@ -16,7 +16,7 @@ const getYouTubeId = (url) => {
   return match ? match[1] : null;
 };
 
-/* ── Delete Confirm Modal ── */
+
 function DeleteConfirm({ reviewId, close, refresh }) {
   const [deleting, setDeleting] = useState(false);
 
@@ -76,7 +76,7 @@ function DeleteConfirm({ reviewId, close, refresh }) {
   );
 }
 
-/* ── MAIN PAGE ── */
+
 export default function AdminReviewPage() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -107,7 +107,7 @@ export default function AdminReviewPage() {
   return (
     <div className="min-h-screen bg-[#f8fafc] p-6">
 
-      {/* ── HEADER ── */}
+
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
         <div>
           <h1 className="text-xl font-black text-[#0f172a] tracking-tight">Reviews Management</h1>
@@ -116,7 +116,7 @@ export default function AdminReviewPage() {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          {/* Search */}
+
           <div className="relative">
             <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <HiMagnifyingGlass className="h-4 w-4 text-slate-400" />
@@ -129,7 +129,7 @@ export default function AdminReviewPage() {
               className="pl-9 pr-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 text-[#0f172a] placeholder-slate-400 transition-all font-medium w-52"
             />
           </div>
-          {/* Add button */}
+
           <Link
             to="/admin/add-review"
             className="inline-flex items-center gap-2 bg-[#0f172a] hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/20"
@@ -140,7 +140,7 @@ export default function AdminReviewPage() {
         </div>
       </div>
 
-      {/* ── STATS ── */}
+
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
         {[
           { label: "Total Reviews", value: reviews.length, color: "text-[#0f172a]" },
@@ -155,10 +155,10 @@ export default function AdminReviewPage() {
         ))}
       </div>
 
-      {/* ── TABLE ── */}
+
       <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
 
-        {/* Table header */}
+
         <div className="px-6 py-4 border-b border-slate-100 bg-slate-50 flex items-center justify-between">
           <h3 className="text-sm font-black text-[#0f172a]">
             All Reviews
@@ -195,7 +195,7 @@ export default function AdminReviewPage() {
                   return (
                     <tr key={item._id} className="hover:bg-slate-50/60 transition-colors duration-150 group">
 
-                      {/* Video thumbnail */}
+
                       <td className="px-6 py-4">
                         <div className="relative w-20 h-14 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0">
                           {ytId ? (
@@ -215,25 +215,25 @@ export default function AdminReviewPage() {
                         </div>
                       </td>
 
-                      {/* Name */}
+
                       <td className="px-6 py-4">
                         <div className="font-black text-sm text-[#0f172a]">{item.name}</div>
                         <div className="text-[11px] text-slate-400 font-medium mt-0.5">{item.program} · {item.year}</div>
                       </td>
 
-                      {/* University */}
+
                       <td className="px-6 py-4">
                         <span className="text-xs font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg">
                           {item.university?.split(" ").slice(0, 2).join(" ")}
                         </span>
                       </td>
 
-                      {/* Quote */}
+
                       <td className="px-6 py-4 max-w-xs">
                         <p className="text-xs text-slate-400 font-medium truncate italic">"{item.quote}"</p>
                       </td>
 
-                      {/* Rating */}
+
                       <td className="px-6 py-4 text-center">
                         <div className="inline-flex items-center gap-1 bg-amber-50 border border-amber-100 px-2.5 py-1 rounded-lg">
                           <span className="text-amber-400 text-xs">★</span>
@@ -241,7 +241,7 @@ export default function AdminReviewPage() {
                         </div>
                       </td>
 
-                      {/* Actions */}
+
                       <td className="px-6 py-4">
                         <div className="flex items-center justify-end gap-2">
                           <button
@@ -267,7 +267,7 @@ export default function AdminReviewPage() {
           </div>
         )}
 
-        {/* Table footer */}
+
         {!loading && filtered.length > 0 && (
           <div className="px-6 py-4 border-t border-slate-100 bg-slate-50">
             <p className="text-[11px] text-slate-400 font-medium">
@@ -278,7 +278,7 @@ export default function AdminReviewPage() {
         )}
       </div>
 
-      {/* Delete Modal */}
+
       {deleteId && (
         <DeleteConfirm
           reviewId={deleteId}

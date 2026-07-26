@@ -11,7 +11,7 @@ import {
 
 import { documents, requirements, processSteps, faqs, universities } from "../data/koreaData";
 
-// Elegant Icon Mapping Function
+
 function getIcon(iconId) {
   const iconClass = "text-blue-600 text-xl flex-shrink-0";
   switch(iconId) {
@@ -81,7 +81,7 @@ export default function StudentVisaKoreaPage() {
     <div className="bg-[#f8fafc] text-slate-900 font-sans overflow-x-hidden">
       <Header />
 
-      {/* ── HERO ── */}
+
       <section className="relative bg-slate-950 pt-36 pb-32 px-4 sm:px-6 md:px-16 lg:px-32 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.12) 0%, transparent 65%)" }} />
         <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 opacity-15 md:opacity-25 mix-blend-lighten">
@@ -128,7 +128,7 @@ export default function StudentVisaKoreaPage() {
         </div>
       </section>
 
-      {/* ── UNIVERSITIES SECTION ── */}
+
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
@@ -167,7 +167,7 @@ export default function StudentVisaKoreaPage() {
         </div>
       </section>
 
-      {/* ── REQUIREMENTS ── */}
+
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
@@ -188,7 +188,7 @@ export default function StudentVisaKoreaPage() {
         </div>
       </section>
 
-      {/* ── DOCUMENTS ── */}
+
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
@@ -211,7 +211,7 @@ export default function StudentVisaKoreaPage() {
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
+
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -237,7 +237,7 @@ export default function StudentVisaKoreaPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
@@ -250,7 +250,7 @@ export default function StudentVisaKoreaPage() {
         </div>
       </section>
 
-      {/* ── MODAL ── */}
+
       <UniversityModal selectedUni={selectedUni} onClose={() => setSelectedUni(null)} />
 
       <Footer />

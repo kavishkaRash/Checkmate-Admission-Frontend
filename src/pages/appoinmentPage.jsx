@@ -13,7 +13,7 @@ export default function AppointmentPage() {
     const [visaType, setVisaType] = useState("");
     const [message, setMessage] = useState("");
     const [university, setUniversity] = useState("");
-    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
     const [education, setEducation] = useState("");
 
     function clear() {
@@ -25,12 +25,12 @@ export default function AppointmentPage() {
         setVisaType("");
         setMessage("");
         setUniversity("");
-        setAddress("");
+        setCity("");
         setEducation("");
     }
 
     async function confirmBooking() {
-        if (!fullName || !age || !email || !phoneNumber || !country || !visaType || !address || !education || !message) {
+        if (!fullName || !age || !email || !phoneNumber || !country || !visaType || !city || !education || !message) {
             toast.error("Please fill in all required fields.");
             return;
         }
@@ -44,7 +44,7 @@ export default function AppointmentPage() {
                 visaType: visaType,
                 message: message,
                 university: university,
-                address: address,
+                city: city,
                 education: education
             })
             toast.success("Booking Confirmed!");
@@ -58,13 +58,13 @@ export default function AppointmentPage() {
         <div className="w-full min-h-screen bg-primary selection:bg-secondary selection:text-accent font-outfit overflow-x-hidden">
             <Header />
 
-            {/* Background Decorative Elements */}
+
             <div className="fixed top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-secondary/10 blur-[120px] pointer-events-none" />
             <div className="fixed bottom-[-5%] left-[-5%] w-[30%] h-[30%] rounded-full bg-secondary/5 blur-[100px] pointer-events-none" />
 
             <div className="max-w-[1200px] mx-auto px-6 py-12 relative z-10">
 
-                {/* Page Header */}
+
                 <div className="mb-12 animate-in fade-in slide-in-from-bottom duration-700">
                     <div className="flex items-center gap-3 mb-4">
                         <div className="h-[1px] w-10 bg-secondary" />
@@ -80,12 +80,12 @@ export default function AppointmentPage() {
 
                 <div className="flex flex-col lg:flex-row gap-16 items-start">
 
-                    {/* Form Container */}
+
                     <div className="w-full lg:max-w-[750px] bg-white/70 backdrop-blur-3xl border border-white rounded-[2.5rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.08)] p-8 md:p-12 animate-in zoom-in-95 duration-1000">
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                            {/* Full Name */}
+
                             <div className="space-y-2">
                                 <label className="flex items-center gap-2 text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
                                     <IoPersonOutline className="text-secondary" /> Full Name
@@ -99,7 +99,7 @@ export default function AppointmentPage() {
                                 />
                             </div>
 
-                            {/* Age */}
+
                             <div className="space-y-2">
                                 <label className="flex items-center gap-2 text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
                                     Age
@@ -113,7 +113,7 @@ export default function AppointmentPage() {
                                 />
                             </div>
 
-                            {/* Education Select */}
+
                             <div className="space-y-2">
                                 <label className="flex items-center gap-2 text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
                                     <IoSchoolOutline className="text-secondary" /> Current Education
@@ -124,13 +124,15 @@ export default function AppointmentPage() {
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary focus:bg-white transition-all appearance-none cursor-pointer"
                                 >
                                     <option value="" disabled>Select Level</option>
+                                    <option value="bachelor">Advanced Level</option>
+                                    <option value="bachelor">Diploma</option>
                                     <option value="bachelor">Bachelor</option>
                                     <option value="undergraduate">Undergraduate</option>
                                     <option value="master">Master</option>
                                 </select>
                             </div>
 
-                            {/* Conditional University Field */}
+
                             {education === "undergraduate" && (
                                 <div className="space-y-2 animate-in fade-in zoom-in duration-300">
                                     <label className="text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
@@ -146,7 +148,7 @@ export default function AppointmentPage() {
                                 </div>
                             )}
 
-                            {/* Visa Type */}
+
                             <div className="space-y-2">
                                 <label className="text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
                                     Visa Type
@@ -155,12 +157,12 @@ export default function AppointmentPage() {
                                     value={visaType}
                                     onChange={(e) => setVisaType(e.target.value)}
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary transition-all appearance-none cursor-pointer">
-                                    <option value="student">Student Visa (D-2)</option>
-                                    <option value="language">Language Trainee (D-4)</option>
+                                    <option value="student">Language (D-4)</option>
+                                    <option value="language">Bachelor / Master (D-2)</option>
                                 </select>
                             </div>
 
-                            {/* Country */}
+
                             <div className="space-y-2">
                                 <label className="flex items-center gap-2 text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
                                     <IoGlobeOutline className="text-secondary" /> Destination
@@ -168,17 +170,17 @@ export default function AppointmentPage() {
                                 <select
                                     value={country}
                                     onChange={(e) => setCountry(e.target.value)}
-                                    className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary transition-all appearance-none cursor-pointer font-bold"
+                                    className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary transition-all appearance-none cursor-pointer"
                                 >
                                     <option value="">Select Destination</option>
                                     <option value="korea">South Korea</option>
                                 </select>
                             </div>
 
-                            {/* Phone Number */}
+
                             <div className="space-y-2">
                                 <label className="flex items-center gap-2 text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
-                                    <IoCallOutline className="text-secondary" /> Phone Number
+                                    <IoCallOutline className="text-secondary" /> Phone Number (WhatsApp)
                                 </label>
                                 <input
                                     type="text"
@@ -189,21 +191,45 @@ export default function AppointmentPage() {
                                 />
                             </div>
 
-                            {/* Permanent Address Section */}
+
                             <div className="space-y-2 md:col-span-2">
                                 <label className="flex items-center gap-2 text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
-                                    <IoLocationOutline className="text-secondary" /> Permanent Address
+                                    <IoLocationOutline className="text-secondary" /> City
                                 </label>
-                                <input
-                                    type="text"
-                                    placeholder="Street Address, City, Country"
-                                    value={address}
-                                    onChange={(e) => setAddress(e.target.value)}
-                                    className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary focus:bg-white transition-all"
-                                />
+                                <select
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                    className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary transition-all appearance-none cursor-pointer "
+                                >
+                                    <option value="">Select City</option>
+                                    <option value="korea">Ampara</option>
+                                    <option value="korea">Anuradhapura</option>
+                                    <option value="korea">Badulla</option>
+                                    <option value="korea">Batticaloa</option>
+                                    <option value="korea">Colombo</option>
+                                    <option value="korea">Galle</option>
+                                    <option value="korea">Gampaha</option>
+                                    <option value="korea">Hambantota</option>
+                                    <option value="korea">Jaffna</option>
+                                    <option value="korea">Kalutara</option>
+                                    <option value="korea">Kandy</option>
+                                    <option value="korea">Kegalle</option>
+                                    <option value="korea">Kilinochchi</option>
+                                    <option value="korea">Kurunegala</option>
+                                    <option value="korea">Mannar</option>
+                                    <option value="korea">Matale</option>
+                                    <option value="korea">Monaragala</option>
+                                    <option value="korea">Mullaitivu</option>
+                                    <option value="korea">Nuwara Eliya</option>
+                                    <option value="korea">Polonnaruwa</option>
+                                    <option value="korea">Puttalam</option>
+                                    <option value="korea">Ratnapura</option>
+                                    <option value="korea">Trincomalee</option>
+                                    <option value="korea">Vavuniya</option>
+                                </select>
                             </div>
 
-                            {/* Email */}
+
                             <div className="space-y-2 md:col-span-2">
                                 <label className="flex items-center gap-2 text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
                                     <IoMailOutline className="text-secondary" /> Email Address
@@ -217,7 +243,7 @@ export default function AppointmentPage() {
                                 />
                             </div>
 
-                            {/* Message */}
+
                             <div className="space-y-2 md:col-span-2">
                                 <label className="flex items-center gap-2 text-[10px] font-black text-accent/30 uppercase tracking-[3px] ml-1">
                                     <IoChatboxEllipsesOutline className="text-secondary" /> Message / Notes
@@ -231,7 +257,7 @@ export default function AppointmentPage() {
                             </div>
                         </div>
 
-                        {/* Submit Button */}
+
                         <div className="mt-12 flex justify-center">
                             <button onClick={confirmBooking} className="group relative h-16 w-full md:w-64 bg-accent text-primary font-syne font-bold text-xs tracking-[4px] uppercase rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] active:scale-95">
                                 <span className="relative z-10">Confirm Booking</span>
@@ -240,10 +266,10 @@ export default function AppointmentPage() {
                         </div>
                     </div>
 
-                    {/* Side Info / Visuals */}
+
                     <div className="hidden lg:block flex-1 space-y-12 sticky top-32">
 
-                        {/* High-End Info Card */}
+
                         <div className="bg-accent text-primary p-10 rounded-[2.5rem] relative overflow-hidden group shadow-2xl shadow-accent/20">
                             <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-all duration-700" />
 
@@ -253,13 +279,13 @@ export default function AppointmentPage() {
                                     <span className="text-[10px] font-black tracking-[4px] text-secondary">PREMIUM SERVICE</span>
                                 </div>
 
-                                <h3 className="font-syne text-2xl font-bold mb-6 leading-tight">Why Choose <br /> Checkmate Korea?</h3>
+                                <h3 className="font-syne text-2xl font-bold mb-6 leading-tight">Why Choose <br /> Checkmate Admission Guide?</h3>
 
                                 <div className="space-y-5">
                                     {[
-                                        "Official Partner with Top 20 Universities",
+                                        "Official Partner with Top Government & Private Universities",
                                         "Certified Visa Consulting Specialists",
-                                        "Direct Support in Seoul & Busan"
+                                        "Guiding Your Path from University Choice to Visa Approval",
                                     ].map((text, i) => (
                                         <div key={i} className="flex items-start gap-4">
                                             <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full border border-secondary/30 flex items-center justify-center text-[10px] text-secondary">
@@ -272,11 +298,11 @@ export default function AppointmentPage() {
                             </div>
                         </div>
 
-                        {/* MINIMALIST PROFESSIONAL BRAND LOCKUP */}
+
                         <div className="relative px-8">
                             <div className="flex flex-col gap-6">
 
-                                {/* The Logo / Seal */}
+
                                 <div className="flex items-center gap-5">
                                     <div className="w-16 h-16 border border-accent/10 rounded-2xl flex items-center justify-center relative overflow-hidden group">
                                         <span className="font-syne font-black text-2xl text-accent relative z-10">C</span>
@@ -293,7 +319,7 @@ export default function AppointmentPage() {
                                     </div>
                                 </div>
 
-                                {/* Typography with Professional Spacing */}
+
                                 <div className="space-y-1">
                                     <h2 className="font-syne text-5xl font-black text-accent tracking-tighter uppercase leading-[0.8]">
                                         Checkmate
@@ -304,7 +330,7 @@ export default function AppointmentPage() {
                                     </div>
                                 </div>
 
-                                {/* Verification Badge */}
+
                                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-accent/[0.03] border border-accent/5 rounded-full w-fit">
                                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_#22c55e]" />
                                     <span className="font-outfit text-[9px] font-bold text-accent/50 uppercase tracking-widest">
@@ -313,7 +339,7 @@ export default function AppointmentPage() {
                                 </div>
                             </div>
 
-                            {/* Traditional Korean Pattern Accent */}
+
                             <div className="absolute -bottom-20 -right-20 w-64 h-64 opacity-[0.02] pointer-events-none rotate-12">
                                 <svg viewBox="0 0 100 100" fill="currentColor">
                                     <path d="M0,0 L100,0 L100,100 L0,100 Z M10,10 L90,10 L90,90 L10,90 Z" />

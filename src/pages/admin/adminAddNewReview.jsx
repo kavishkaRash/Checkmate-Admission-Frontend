@@ -10,7 +10,7 @@ import {
 } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa";
 
-// ── YouTube ID preview helper ──────────────────────────────────────────────
+
 const getYouTubeId = (url) => {
   const match = url?.match(
     /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([\w-]{11})/
@@ -18,7 +18,7 @@ const getYouTubeId = (url) => {
   return match ? match[1] : null;
 };
 
-// ── Field component ────────────────────────────────────────────────────────
+
 function Field({ label, icon, children, hint }) {
   return (
     <div>
@@ -32,7 +32,7 @@ function Field({ label, icon, children, hint }) {
   );
 }
 
-// ── Star selector ──────────────────────────────────────────────────────────
+
 function StarRating({ value, onChange }) {
   const [hovered, setHovered] = useState(0);
   return (
@@ -58,10 +58,10 @@ function StarRating({ value, onChange }) {
   );
 }
 
-// ── Input style ────────────────────────────────────────────────────────────
+
 const inputCls = "w-full bg-slate-50 border border-slate-200 text-[#0f172a] placeholder-slate-300 text-sm font-medium px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all duration-200";
 
-// ── Main ───────────────────────────────────────────────────────────────────
+
 export default function AdminAddNewReview() {
   const [form, setForm] = useState({
     reviewId: "",
@@ -82,7 +82,7 @@ export default function AdminAddNewReview() {
   const set = (key) => (e) =>
     setForm((prev) => ({ ...prev, [key]: e.target.value }));
 
-  // Auto-generate initials from name
+
   const handleNameChange = (e) => {
     const name = e.target.value;
     const initials = name
@@ -125,7 +125,7 @@ export default function AdminAddNewReview() {
   return (
     <div className="min-h-screen bg-[#f8fafc] p-6">
 
-      {/* ── PAGE HEADER ── */}
+
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
           <button
@@ -145,10 +145,10 @@ export default function AdminAddNewReview() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          {/* ── LEFT — FORM ── */}
+
           <div className="lg:col-span-2 space-y-6">
 
-            {/* Card 1 — Student Info */}
+
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
               <h3 className="text-sm font-black text-[#0f172a] mb-5 flex items-center gap-2">
                 <span className="w-6 h-6 bg-blue-600 rounded-lg flex items-center justify-center text-white text-[10px] font-black">1</span>
@@ -222,7 +222,7 @@ export default function AdminAddNewReview() {
               </div>
             </div>
 
-            {/* Card 2 — Review Content */}
+
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
               <h3 className="text-sm font-black text-[#0f172a] mb-5 flex items-center gap-2">
                 <span className="w-6 h-6 bg-blue-600 rounded-lg flex items-center justify-center text-white text-[10px] font-black">2</span>
@@ -246,7 +246,7 @@ export default function AdminAddNewReview() {
               </div>
             </div>
 
-            {/* Card 3 — YouTube */}
+
             <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
               <h3 className="text-sm font-black text-[#0f172a] mb-5 flex items-center gap-2">
                 <span className="w-6 h-6 bg-red-500 rounded-lg flex items-center justify-center text-white text-[10px]">
@@ -270,16 +270,16 @@ export default function AdminAddNewReview() {
             </div>
           </div>
 
-          {/* ── RIGHT — PREVIEW ── */}
+
           <div className="space-y-5">
 
-            {/* Video preview */}
+
             <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm sticky top-6">
               <div className="px-5 py-4 border-b border-slate-100">
                 <h3 className="text-xs font-black text-[#0f172a] uppercase tracking-wider">Live Preview</h3>
               </div>
 
-              {/* Thumbnail */}
+
               <div className="relative h-40 bg-[#0f172a] overflow-hidden">
                 {ytId ? (
                   <img
@@ -305,7 +305,7 @@ export default function AdminAddNewReview() {
                 )}
               </div>
 
-              {/* Preview card body */}
+
               <div className="p-5">
                 <div className="flex gap-0.5 mb-3">
                   {[...Array(form.rating)].map((_, i) => (
@@ -327,7 +327,7 @@ export default function AdminAddNewReview() {
                 </div>
               </div>
 
-              {/* Publish button */}
+
               <div className="px-5 pb-5">
                 <button
                   onClick={addReview}

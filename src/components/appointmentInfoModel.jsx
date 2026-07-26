@@ -29,10 +29,10 @@ export default function AppointmentInfoModal({ isModelOpen, selectedAppointment,
     return (
         <div className="fixed inset-0 bg-accent/40 backdrop-blur-xl flex items-center justify-center z-[100] p-4 animate-in fade-in duration-300">
             
-            {/* Modal Container */}
+
             <div className="bg-white/95 backdrop-blur-3xl w-full max-w-2xl max-h-[90vh] overflow-hidden rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-white flex flex-col relative animate-in zoom-in-95 duration-300 font-outfit">
                 
-                {/* Header Section */}
+
                 <div className="p-6 md:p-8 border-b border-accent/5 flex justify-between items-center bg-accent/[0.01]">
                     <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary">
@@ -54,10 +54,10 @@ export default function AppointmentInfoModal({ isModelOpen, selectedAppointment,
                     </button>
                 </div>
 
-                {/* Content Section (Scrollable) */}
+
                 <div className="p-6 md:p-8 overflow-y-auto space-y-8 custom-scrollbar flex-1">
                     
-                    {/* Status Indicator */}
+
                     <div className="flex items-center justify-between p-4 rounded-2xl bg-accent/[0.02] border border-accent/5">
                         <span className="text-[11px] font-black uppercase tracking-wider text-accent/40">Current Status</span>
                         <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest
@@ -69,10 +69,10 @@ export default function AppointmentInfoModal({ isModelOpen, selectedAppointment,
                         </span>
                     </div>
 
-                    {/* Main Grid Layout */}
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         
-                        {/* Left Side: Student Profile */}
+
                         <div className="space-y-4">
                             <h3 className="text-[10px] uppercase tracking-[3px] font-black text-secondary border-b border-accent/5 pb-2">
                                 Student Core Profile
@@ -116,7 +116,7 @@ export default function AppointmentInfoModal({ isModelOpen, selectedAppointment,
                             </div>
                         </div>
 
-                        {/* Right Side: Contact & Communication */}
+
                         <div className="space-y-4">
                             <h3 className="text-[10px] uppercase tracking-[3px] font-black text-secondary border-b border-accent/5 pb-2">
                                 Contact & Communication
@@ -146,7 +146,7 @@ export default function AppointmentInfoModal({ isModelOpen, selectedAppointment,
                         </div>
                     </div>
 
-                    {/* Message Section */}
+
                     <div className="space-y-2">
                         <h3 className="text-[10px] uppercase tracking-[3px] font-black text-secondary">Statement / Notes</h3>
                         <p className="text-sm text-accent/80 bg-secondary/5 p-4 rounded-2xl border border-secondary/10 whitespace-pre-line leading-relaxed">
@@ -155,10 +155,10 @@ export default function AppointmentInfoModal({ isModelOpen, selectedAppointment,
                     </div>
                 </div>
 
-                {/* Footer Section: Action Buttons */}
+
                 <div className="p-6 md:p-8 bg-accent/[0.01] border-t border-accent/5 flex flex-col sm:flex-row justify-between items-center gap-6">
                     
-                    {/* Status Updates */}
+
                     <div className="flex flex-col gap-2 w-full sm:w-auto">
                         <span className="text-[9px] uppercase tracking-widest font-black text-accent/40 text-center sm:text-left">
                             Update Registration Workflow
@@ -188,7 +188,7 @@ export default function AppointmentInfoModal({ isModelOpen, selectedAppointment,
                         </div>
                     </div>
 
-                    {/* Timestamp */}
+
                     <div className="text-center sm:text-right w-full sm:w-auto">
                         <span className="text-[10px] uppercase tracking-wider text-accent/30 block">Submission Date</span>
                         <span className="text-xs font-bold text-accent/60 mt-1 block">
@@ -198,7 +198,6 @@ export default function AppointmentInfoModal({ isModelOpen, selectedAppointment,
                 </div>
             </div>
 
-            {/* Custom Scrollbar Styles */}
             <style>{`
                 .custom-scrollbar::-webkit-scrollbar { width: 4px; }
                 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }

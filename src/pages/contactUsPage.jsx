@@ -40,9 +40,9 @@ export default function ContactUs() {
         <div className="w-full min-h-screen bg-primary font-outfit text-accent">
             <Header />
 
-            {/* --- HERO BANNER SECTION --- */}
+
             <div className="relative w-full h-[500px] lg:h-[580px] bg-accent flex items-center justify-center overflow-hidden">
-                {/* Background Image with Dark Overlay */}
+
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://res.cloudinary.com/ddrbcubf8/image/upload/q_auto/f_auto/v1778913706/Gemini_Generated_Image_fy3q2mfy3q2mfy3q_d6v9hr.png"
@@ -52,7 +52,7 @@ export default function ContactUs() {
                     <div className="absolute inset-0 bg-gradient-to-t from-accent via-accent/80 to-transparent"></div>
                 </div>
 
-                {/* Hero Content */}
+
                 <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-4 animate-in fade-in slide-in-from-bottom duration-700">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 backdrop-blur-sm">
                         <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
@@ -67,7 +67,7 @@ export default function ContactUs() {
                 </div>
             </div>
 
-            {/* --- QUICK CONTACT CARDS --- */}
+
             <div className="max-w-7xl mx-auto px-6 -mt-16 relative z-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                     { icon: <IoCallOutline size={24} />, title: "Call Us", desc1: "+94 77 123 4567", desc2: "+94 11 234 5678", type: "tel" },
@@ -108,7 +108,7 @@ export default function ContactUs() {
                 ))}
             </div>
 
-            {/* --- OUR BRANCHES SECTION --- */}
+
             <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
                 <div className="text-center space-y-2 mb-16">
                     <p className="text-[10px] tracking-[4px] uppercase font-black text-secondary">Our Presence</p>
@@ -117,7 +117,7 @@ export default function ContactUs() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {/* Anuradhapura Branch */}
+
                     <div className="bg-primary border border-accent/5 rounded-[2.5rem] overflow-hidden shadow-sm group hover:shadow-xl hover:border-secondary/10 transition-all duration-300 flex flex-col sm:flex-row">
                         <div className="sm:w-1/2 h-52 sm:h-auto relative overflow-hidden">
                             <img
@@ -141,7 +141,7 @@ export default function ContactUs() {
                         </div>
                     </div>
 
-                    {/* Kaduwela Branch */}
+
                     <div className="bg-primary border border-accent/5 rounded-[2.5rem] overflow-hidden shadow-sm group hover:shadow-xl hover:border-secondary/10 transition-all duration-300 flex flex-col sm:flex-row">
                         <div className="sm:w-1/2 h-52 sm:h-auto relative overflow-hidden">
                             <img
@@ -167,11 +167,11 @@ export default function ContactUs() {
                 </div>
             </div>
 
-            {/* --- INQUIRY FORM & BUSINESS HOURS --- */}
+
             <div className="bg-accent/[0.02] border-y border-accent/5 py-20 lg:py-28">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-                    {/* Inquiry Form */}
+
                     <div className="lg:col-span-7 bg-primary border border-accent/5 p-8 md:p-10 rounded-[2.5rem] shadow-sm">
                         <h3 className="font-syne font-bold text-2xl mb-2">Send Us a Message</h3>
                         <p className="text-xs text-accent/50 mb-8 font-medium">Fill out the form below and our team will get back to you within 24 hours.</p>
@@ -258,9 +258,9 @@ export default function ContactUs() {
                         </form>
                     </div>
 
-                    {/* Side Panel: Hours & Socials */}
+
                     <div className="lg:col-span-5 space-y-6">
-                        {/* Business Hours */}
+
                         <div className="bg-accent text-primary p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden">
                             <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-secondary/10 rounded-full blur-2xl"></div>
                             <h3 className="font-syne font-bold text-xl text-primary mb-6 flex items-center gap-2">
@@ -282,7 +282,7 @@ export default function ContactUs() {
                             </div>
                         </div>
 
-                        {/* Social Connect */}
+
                         <div className="bg-primary border border-accent/5 p-8 rounded-[2.5rem] shadow-sm">
                             <h3 className="font-syne font-bold text-lg mb-4">Connect With Us</h3>
                             <div className="flex gap-3">
@@ -298,7 +298,7 @@ export default function ContactUs() {
                 </div>
             </div>
 
-            {/* --- CTA BOTTOM FOOTER BANNER --- */}
+
             <div className="max-w-7xl mx-auto px-6 py-12">
                 <div className="w-full bg-accent text-primary p-8 md:p-12 rounded-[2.5rem] text-center space-y-6 relative overflow-hidden shadow-2xl">
                     <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none bg-[radial-gradient(#00ffef_1px,transparent_1px)] [background-size:16px_16px]"></div>
