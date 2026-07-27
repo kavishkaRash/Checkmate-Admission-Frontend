@@ -33,7 +33,6 @@ export default function UniversityDetail() {
     <div className="w-full min-h-screen bg-primary text-accent font-outfit relative overflow-x-hidden selection:bg-secondary selection:text-accent">
       <Header />
 
-      {/* Hero Section */}
       <div className="relative w-full h-[380px] lg:h-[460px] overflow-hidden group">
         <img
           src={image}
@@ -91,7 +90,7 @@ export default function UniversityDetail() {
         </div>
       </div>
 
-      {/* Content Container */}
+
       <main className="max-w-6xl mx-auto px-6 lg:px-8 py-12 space-y-16">
         {/* Overview Card */}
         <section className="bg-accent/5 border border-accent/10 rounded-3xl p-8 lg:p-10 shadow-sm relative overflow-hidden">
@@ -123,7 +122,7 @@ export default function UniversityDetail() {
           )}
         </section>
 
-        {/* Programs Offered */}
+
         <section className="space-y-8">
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold text-accent tracking-tight">
@@ -134,7 +133,7 @@ export default function UniversityDetail() {
             </p>
           </div>
 
-          {/* Category Tabs */}
+
           <div className="flex flex-wrap gap-2 sm:gap-3 border-b border-accent/10 pb-4">
             {categories.map((cat, i) => (
               <button
@@ -151,7 +150,7 @@ export default function UniversityDetail() {
             ))}
           </div>
 
-          {/* Programs Grid */}
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {currentPrograms.map((program, i) => (
               <div
@@ -212,7 +211,7 @@ export default function UniversityDetail() {
           </div>
         </section>
 
-        {/* Fees Table */}
+
         <section className="space-y-6">
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold text-accent tracking-tight">
@@ -263,7 +262,7 @@ export default function UniversityDetail() {
           </div>
         </section>
 
-        {/* Features / Why Choose */}
+
         {features.length > 0 && (
           <section className="space-y-6">
             <h2 className="text-2xl lg:text-3xl font-bold text-accent tracking-tight">
@@ -287,7 +286,7 @@ export default function UniversityDetail() {
           </section>
         )}
 
-        {/* CTA Card */}
+
         <section className="pt-6 pb-12">
           <div className="relative rounded-3xl bg-accent text-primary p-8 sm:p-12 text-center overflow-hidden shadow-2xl">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-3xl pointer-events-none" />

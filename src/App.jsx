@@ -13,7 +13,7 @@ import AppointmentPage from './pages/appoinmentPage.jsx'
 import HomePage from './pages/homePage.jsx'
 import AboutUs from './pages/aboutUs.jsx'
 import ProtectedRoute from './components/protectedRoute.jsx'
-import UniversityDetail from './pages/university/universityDetail.jsx'
+import UniversityDetail from './pages/university/UniversityDetail.jsx'
 
 function App() {
 
