@@ -41,13 +41,13 @@ export default function AdminAppointment() {
 
     return (
         <div className="w-full min-h-screen bg-[#FDFDFD] p-4 lg:p-10 selection:bg-secondary selection:text-accent font-outfit">
-            
 
-            <AppointmentInfoModal 
-                selectedAppointment={selectedAppointment} 
-                isModelOpen={isModelOpen} 
-                closeModal={() => setIsModelOpen(false)} 
-                refresh={() => setIsLoading(true)} 
+
+            <AppointmentInfoModal
+                selectedAppointment={selectedAppointment}
+                isModelOpen={isModelOpen}
+                closeModal={() => setIsModelOpen(false)}
+                refresh={() => setIsLoading(true)}
             />
 
             <div className="max-w-[1600px] mx-auto">
@@ -73,7 +73,7 @@ export default function AdminAppointment() {
                             <p className="text-[9px] uppercase tracking-[2px] text-accent/40 font-bold">Total Directory</p>
                             <p className="text-xl font-syne font-bold text-accent">
                                 {isLoading ? "..." : appointments.length.toString().padStart(2, '0')}{" "}
-                                <span className="text-[10px] text-secondary font-black uppercase tracking-wider ml-1">People</span>
+                                <span className="text-[10px] text-accent font-black uppercase tracking-wider ml-1">People</span>
                             </p>
                         </div>
                     </div>
@@ -113,9 +113,9 @@ export default function AdminAppointment() {
                                     </tr>
                                 ) : (
                                     appointments.map((item) => (
-                                        <tr 
+                                        <tr
                                             key={item._id}
-                                            onClick={() => handleRowClick(item)} 
+                                            onClick={() => handleRowClick(item)}
                                             className="group hover:bg-secondary/[0.015] cursor-pointer transition-all duration-200"
                                         >
                                             <td className="py-6 px-8">
@@ -124,20 +124,24 @@ export default function AdminAppointment() {
                                             </td>
                                             <td className="py-6 px-6">
                                                 <div className="flex items-center gap-2 text-[13px] font-bold text-accent/80">
-                                                    <IoSchoolOutline className="text-secondary/70" size={14} /> {item.education}
+                                                    <IoSchoolOutline className="text-assent/40" size={14} /> {item.education}
                                                 </div>
-                                                <p className="text-[11px] text-accent/30 italic ml-5 mt-0.5 truncate max-w-[220px]">{item.university || "Not Provided"}</p>
+                                                <p className="text-[11px] text-accent/30 italic ml-5 mt-0.5 truncate max-w-[220px]">
+                                                {item.city
+                                                    ? `${item.city}, Sri Lanka`
+                                                    : "No address provided."
+                                                }</p>
                                             </td>
                                             <td className="py-6 px-6">
                                                 <div className="flex items-center gap-2 text-[12px] font-bold text-accent/80 uppercase">
                                                     <IoAirplaneOutline className="text-accent/40" size={14} /> {item.visaType}
                                                 </div>
-                                                <p className="text-[10px] font-black text-secondary tracking-widest ml-5 uppercase mt-0.5">{item.Destination || "S. KOREA"}</p>
+                                                <p className="text-[10px] font-black text-accent/30 tracking-widest ml-5 uppercase mt-0.5">{item.Destination || "S. KOREA"}</p>
                                             </td>
                                             <td className="py-6 px-6" onClick={(e) => e.stopPropagation()}>
                                                 {/* Stop propagation blocks row click event when firing dialers directly */}
                                                 <a href={`tel:${item.phoneNumber}`} className="flex items-center gap-2 text-[12px] font-bold text-accent hover:text-secondary transition-colors mb-1 w-fit">
-                                                    <IoCallOutline className="text-secondary" /> {item.phoneNumber}
+                                                    <IoCallOutline className="text-accent/40" /> {item.phoneNumber}
                                                 </a>
                                                 <a href={`mailto:${item.email}`} className="flex items-center gap-2 text-[11px] text-accent/40 hover:text-secondary transition-colors italic w-fit truncate max-w-[200px]">
                                                     <IoMailOutline /> {item.email}
@@ -166,8 +170,8 @@ export default function AdminAppointment() {
                             </div>
                         ) : (
                             appointments.map((item) => (
-                                <div 
-                                    key={item._id} 
+                                <div
+                                    key={item._id}
                                     onClick={() => handleRowClick(item)}
                                     className="p-6 bg-white active:bg-secondary/[0.02] cursor-pointer transition-colors"
                                 >
@@ -188,7 +192,7 @@ export default function AdminAppointment() {
                                         </div>
                                         <div className="flex items-center gap-3 text-accent/60">
                                             <IoLocationOutline className="text-secondary" size={15} />
-                                            <span className="text-[11px] font-medium italic truncate max-w-[280px]">{item.address || "No address provided"}</span>
+                                            <span className="text-[11px] font-medium italic truncate max-w-[280px]">{item.city || "No address provided"}</span>
                                         </div>
                                     </div>
 

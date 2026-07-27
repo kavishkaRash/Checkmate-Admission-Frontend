@@ -204,30 +204,30 @@ export default function AppointmentPage() {
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary transition-all appearance-none cursor-pointer "
                                 >
                                     <option value="" disabled>Select City</option>
-                                    <option value="korea">Ampara</option>
-                                    <option value="korea">Anuradhapura</option>
-                                    <option value="korea">Badulla</option>
-                                    <option value="korea">Batticaloa</option>
-                                    <option value="korea">Colombo</option>
-                                    <option value="korea">Galle</option>
-                                    <option value="korea">Gampaha</option>
-                                    <option value="korea">Hambantota</option>
-                                    <option value="korea">Jaffna</option>
-                                    <option value="korea">Kalutara</option>
-                                    <option value="korea">Kandy</option>
-                                    <option value="korea">Kegalle</option>
-                                    <option value="korea">Kilinochchi</option>
-                                    <option value="korea">Kurunegala</option>
-                                    <option value="korea">Mannar</option>
-                                    <option value="korea">Matale</option>
-                                    <option value="korea">Monaragala</option>
-                                    <option value="korea">Mullaitivu</option>
-                                    <option value="korea">Nuwara Eliya</option>
-                                    <option value="korea">Polonnaruwa</option>
-                                    <option value="korea">Puttalam</option>
-                                    <option value="korea">Ratnapura</option>
-                                    <option value="korea">Trincomalee</option>
-                                    <option value="korea">Vavuniya</option>
+                                    <option value="Ampara">Ampara</option>
+                                    <option value="Anuradhapura">Anuradhapura</option>
+                                    <option value="Badulla">Badulla</option>
+                                    <option value="Batticaloa">Batticaloa</option>
+                                    <option value="Colombo">Colombo</option>
+                                    <option value="Galle">Galle</option>
+                                    <option value="Gampaha">Gampaha</option>
+                                    <option value="Hambanthota">Hambantota</option>
+                                    <option value="Jaffna">Jaffna</option>
+                                    <option value="Kalutara">Kalutara</option>
+                                    <option value="Kandy">Kandy</option>
+                                    <option value="Kegalle">Kegalle</option>
+                                    <option value="Kilinochchi">Kilinochchi</option>
+                                    <option value="Kurunegala">Kurunegala</option>
+                                    <option value="Mannar">Mannar</option>
+                                    <option value="Matale">Matale</option>
+                                    <option value="Monoragala">Monaragala</option>
+                                    <option value="Mullaitivu">Mullaitivu</option>
+                                    <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                    <option value="Polonnaruwa">Polonnaruwa</option>
+                                    <option value="Puttalam">Puttalam</option>
+                                    <option value="Rathnapura">Rathnapura</option>
+                                    <option value="Trincomalee">Trincomalee</option>
+                                    <option value="Vavuniya">Vavuniya</option>
                                 </select>
                             </div>
 
