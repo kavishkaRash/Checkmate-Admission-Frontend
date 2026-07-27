@@ -124,14 +124,14 @@ export default function AppointmentPage() {
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary focus:bg-white transition-all appearance-none cursor-pointer"
                                 >
                                     <option value="" disabled>Select Level</option>
-                                    <option value="bachelor">Advanced Level</option>
-                                    <option value="bachelor">Diploma</option>
-                                    <option value="bachelor">Bachelor</option>
+                                    <option value="Adavanced Level">Advanced Level</option>
+                                    <option value="Diploma">Diploma</option>
+                                    <option value="Bachelor">Bachelor</option>
                                     <option value="undergraduate">Undergraduate</option>
                                     <option value="master">Master</option>
                                 </select>
                             </div>
-
+ 
 
                             {education === "undergraduate" && (
                                 <div className="space-y-2 animate-in fade-in zoom-in duration-300">
@@ -157,8 +157,10 @@ export default function AppointmentPage() {
                                     value={visaType}
                                     onChange={(e) => setVisaType(e.target.value)}
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary transition-all appearance-none cursor-pointer">
-                                    <option value="student">Language (D-4)</option>
-                                    <option value="language">Bachelor / Master (D-2)</option>
+                                    <option value="" disabled>Select Visa Type</option>
+                                    <option value="Language">Language (D-4)</option>
+                                    <option value="Bachelor">Bachelor (D-2)</option>
+                                    <option value="Master"> Master (D-2)</option>
                                 </select>
                             </div>
 
@@ -172,8 +174,8 @@ export default function AppointmentPage() {
                                     onChange={(e) => setCountry(e.target.value)}
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary transition-all appearance-none cursor-pointer"
                                 >
-                                    <option value="">Select Destination</option>
-                                    <option value="korea">South Korea</option>
+                                    <option value="" disabled>Select Destination</option>
+                                    <option value="South Korea">South Korea</option>
                                 </select>
                             </div>
 
@@ -201,7 +203,7 @@ export default function AppointmentPage() {
                                     onChange={(e) => setCity(e.target.value)}
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary transition-all appearance-none cursor-pointer "
                                 >
-                                    <option value="">Select City</option>
+                                    <option value="" disabled>Select City</option>
                                     <option value="korea">Ampara</option>
                                     <option value="korea">Anuradhapura</option>
                                     <option value="korea">Badulla</option>

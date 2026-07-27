@@ -13,6 +13,7 @@ import AppointmentPage from './pages/appoinmentPage.jsx'
 import HomePage from './pages/homePage.jsx'
 import AboutUs from './pages/aboutUs.jsx'
 import ProtectedRoute from './components/protectedRoute.jsx'
+import UniversityDetail from './pages/university/universityDetail.jsx'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={<RegisterPage />} />
             <Route path='/appointment' element={<AppointmentPage />} />
+            <Route path="/university/:id" element={<UniversityDetail />} />
             <Route path='/admin/*' element={
               <ProtectedRoute>
                 <Admin />

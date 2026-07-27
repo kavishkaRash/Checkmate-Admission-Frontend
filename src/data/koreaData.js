@@ -43,8 +43,264 @@ export const faqs = [
 ];
 
 export const universities = [
-  { id: "inu", name: "Incheon National University (INU)", shortName: "INU", location: "Incheon (Songdo International City)", programs: ["Korean Language Program", "Bachelor's Degrees", "Master's Degrees"], intakes: "March, September", features: ["State-of-the-art international campus", "Strategic location near Incheon Airport", "Ultra-modern learning & sports facilities"], students: "18,000+ Students from 80+ countries", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80", bgGradient: "from-blue-600 to-cyan-500" },
-  { id: "skku", name: "Sungkyunkwan University (SKKU)", shortName: "SKKU", location: "Seoul (Jongno-gu) + Suwon Campus", programs: ["Korean Language Program", "Bachelor's", "Master's", "PhD Programs"], intakes: "March, September", features: ["Historically founded in 1398", "Deeply affiliated with Samsung Group", "Ranked in the Top 100 Global Universities"], students: "33,000+ Active Students", image: "https://images.unsplash.com/photo-1607237138185-eedd996259d9?auto=format&fit=crop&w=600&q=80", bgGradient: "from-emerald-600 to-teal-500" },
-  { id: "woosong", name: "Woosong University", shortName: "Woosong", location: "Daejeon", programs: ["Korean Language Program", "Bachelor's Degrees", "Vocational Training"], intakes: "March, September", features: ["Highly international-friendly ecosystem", "Consistently high visa approval rate", "Houses the prestigious SolBridge International School"], students: "10,000+ Total Students", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80", bgGradient: "from-indigo-600 to-purple-500" },
-  { id: "konkuk", name: "Konkuk University", shortName: "Konkuk", location: "Seoul (Gwangjin-gu)", programs: ["Korean Language Program", "Bachelor's Degrees", "Master's Degrees"], intakes: "March, September", features: ["Beautiful large lake-centric campus", "Strong global research reputation", "Vibrant and energetic student neighborhood life"], students: "28,000+ Active Students", image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=600&q=80", bgGradient: "from-rose-600 to-orange-500" },
+  {
+    id: "inu",
+    name: "Incheon National University (INU)",
+    shortName: "INU",
+    location: "Incheon (Songdo International City)",
+    overview: "Incheon National University is a state-run research university located in Songdo, offering a globally connected campus minutes from Incheon International Airport.",
+    categories: [
+      {
+        type: "Language Program",
+        programs: [
+          {
+            title: "Korean Language Program",
+            duration: "6 months – 1 year",
+            intake: "March, June, September, December",
+            fees: "USD 1,800 / term",
+            requirements: [
+              "Completed A/L or equivalent",
+              "Valid passport (6+ months)",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+      {
+        type: "Bachelor",
+        programs: [
+          {
+            title: "International Business & Economy",
+            duration: "4 years",
+            intake: "March, September",
+            fees: "USD 3,200 / semester",
+            requirements: [
+              "TOPIK Level 3 or Korean Language Program completion",
+              "A/L results (3 passes)",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+    ],
+    features: [
+      "State-of-the-art international campus",
+      "Strategic location near Incheon Airport",
+      "Ultra-modern learning & sports facilities",
+    ],
+    students: "18,000+ Students from 80+ countries",
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80",
+    bgGradient: "from-blue-600 to-cyan-500",
+  },
+  {
+    id: "skku",
+    name: "Sungkyunkwan University (SKKU)",
+    shortName: "SKKU",
+    location: "Seoul (Jongno-gu) + Suwon Campus",
+    overview: "Founded in 1398, Sungkyunkwan University is one of Korea's oldest and most prestigious institutions, closely affiliated with Samsung Group and consistently ranked among the top 100 universities globally.",
+    categories: [
+      {
+        type: "Language Program",
+        programs: [
+          {
+            title: "Korean Language Program",
+            duration: "10 weeks per term",
+            intake: "March, June, September, December",
+            fees: "USD 1,900 / term",
+            requirements: [
+              "Completed A/L or equivalent",
+              "Valid passport (6+ months)",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+      {
+        type: "Bachelor's",
+        programs: [
+          {
+            title: "Bachelor's Degree Programs",
+            duration: "4 years",
+            intake: "March, September",
+            fees: "USD 4,500 / semester",
+            requirements: [
+              "TOPIK Level 3+ or English proficiency (for English-taught tracks)",
+              "A/L results (3 passes)",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+      {
+        type: "Master's",
+        programs: [
+          {
+            title: "Master's Degree Programs",
+            duration: "2 years",
+            intake: "March, September",
+            fees: "USD 5,200 / semester",
+            requirements: [
+              "Bachelor's degree in a related field",
+              "TOPIK Level 4+ or English proficiency",
+              "Statement of purpose & recommendation letters",
+            ],
+          },
+        ],
+      },
+      {
+        type: "PhD Programs",
+        programs: [
+          {
+            title: "Doctoral Degree Programs",
+            duration: "3+ years",
+            intake: "March, September",
+            fees: "USD 5,800 / semester",
+            requirements: [
+              "Master's degree in a related field",
+              "TOPIK Level 4+ or English proficiency",
+              "Research proposal & recommendation letters",
+            ],
+          },
+        ],
+      },
+    ],
+    features: [
+      "Historically founded in 1398",
+      "Deeply affiliated with Samsung Group",
+      "Ranked in the Top 100 Global Universities",
+    ],
+    students: "33,000+ Active Students",
+    image: "https://images.unsplash.com/photo-1607237138185-eedd996259d9?auto=format&fit=crop&w=600&q=80",
+    bgGradient: "from-emerald-600 to-teal-500",
+  },
+  {
+    id: "woosong",
+    name: "Woosong University",
+    shortName: "Woosong",
+    location: "Daejeon",
+    overview: "Woosong University is known for its highly international-friendly ecosystem, home to the prestigious SolBridge International School of Business and a consistently high visa approval rate for international students.",
+    categories: [
+      {
+        type: "Language Program",
+        programs: [
+          {
+            title: "Korean Language Program",
+            duration: "6 months – 1 year",
+            intake: "March, June, September, December",
+            fees: "USD 1,600 / term",
+            requirements: [
+              "Completed A/L or equivalent",
+              "Valid passport (6+ months)",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+      {
+        type: "Bachelor",
+        programs: [
+          {
+            title: "Bachelor's Degree Programs",
+            duration: "4 years",
+            intake: "March, September",
+            fees: "USD 3,000 / semester",
+            requirements: [
+              "TOPIK Level 3 or Korean Language Program completion",
+              "A/L results (3 passes)",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+      {
+        type: "Vocational Training",
+        programs: [
+          {
+            title: "Vocational Training Programs",
+            duration: "2 years",
+            intake: "March, September",
+            fees: "USD 2,500 / semester",
+            requirements: [
+              "Completed A/L or equivalent",
+              "Basic Korean or English proficiency",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+    ],
+    features: [
+      "Highly international-friendly ecosystem",
+      "Consistently high visa approval rate",
+      "Houses the prestigious SolBridge International School",
+    ],
+    students: "10,000+ Total Students",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80",
+    bgGradient: "from-indigo-600 to-purple-500",
+  },
+  {
+    id: "konkuk",
+    name: "Konkuk University",
+    shortName: "Konkuk",
+    location: "Seoul (Gwangjin-gu)",
+    overview: "Konkuk University offers a beautiful lake-centric campus in the heart of Seoul, combined with a strong global research reputation and a vibrant, energetic student neighborhood.",
+    categories: [
+      {
+        type: "Language Program",
+        programs: [
+          {
+            title: "Korean Language Program",
+            duration: "10 weeks per term",
+            intake: "March, June, September, December",
+            fees: "USD 1,700 / term",
+            requirements: [
+              "Completed A/L or equivalent",
+              "Valid passport (6+ months)",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+      {
+        type: "Bachelor",
+        programs: [
+          {
+            title: "Bachelor's Degree Programs",
+            duration: "4 years",
+            intake: "March, September",
+            fees: "USD 3,800 / semester",
+            requirements: [
+              "TOPIK Level 3 or Korean Language Program completion",
+              "A/L results (3 passes)",
+              "Bank statement (LKR 1,000,000+)",
+            ],
+          },
+        ],
+      },
+      {
+        type: "Master's",
+        programs: [
+          {
+            title: "Master's Degree Programs",
+            duration: "2 years",
+            intake: "March, September",
+            fees: "USD 4,600 / semester",
+            requirements: [
+              "Bachelor's degree in a related field",
+              "TOPIK Level 4+ or English proficiency",
+              "Statement of purpose & recommendation letters",
+            ],
+          },
+        ],
+      },
+    ],
+    features: [
+      "Beautiful large lake-centric campus",
+      "Strong global research reputation",
+      "Vibrant and energetic student neighborhood life",
+    ],
+    students: "28,000+ Active Students",
+    image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=600&q=80",
+    bgGradient: "from-rose-600 to-orange-500",
+  },
 ];
