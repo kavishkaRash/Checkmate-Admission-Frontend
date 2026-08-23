@@ -89,14 +89,12 @@ export default function TrustBar() {
           </p>
         </div>
 
-        {/* Shadow Faders */}
         <div className="absolute left-0 bottom-0 top-0 w-24 md:w-48 bg-gradient-to-r from-[#f8fafc] via-[#f8fafc]/90 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 bottom-0 top-0 w-24 md:w-48 bg-gradient-to-l from-[#f8fafc] via-[#f8fafc]/90 to-transparent z-10 pointer-events-none" />
 
-        {/* 🔄 Infinite Continuous Slider Wrapper */}
         <div className="flex w-full overflow-hidden relative">
           
-          {/* Loop එක ගැස්සෙන්නේ නැතුව දිගටම වමට යන්න flex-nowrap සහ pr-8 දැම්මා */}
+
           <div className="flex flex-nowrap shrink-0 items-center gap-8 animate-scroll hover:[animation-play-state:paused] pr-8">
             {universities.map((uni, index) => (
               <div 
@@ -118,7 +116,7 @@ export default function TrustBar() {
             ))}
           </div>
 
-          {/* Duplicated set for seamless animation */}
+
           <div className="flex flex-nowrap shrink-0 items-center gap-8 animate-scroll hover:[animation-play-state:paused] pr-8" aria-hidden="true">
             {universities.map((uni, index) => (
               <div 

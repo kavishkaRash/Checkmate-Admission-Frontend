@@ -39,7 +39,7 @@ const reasons = [
   },
 ];
 
-// Reusable Clean Vector Components Matching Card Theme
+
 const CardIcon = ({ type }) => {
   const baseClass = "w-full h-full stroke-current fill-none";
   switch (type) {
@@ -190,12 +190,12 @@ function Card({ item, index }) {
       `}
       style={{ transitionDelay: visible ? "0ms" : `${index * 120}ms` }}
     >
-      {/* Dynamic Corner Orb */}
+
       <div className={`absolute -top-16 -right-16 w-32 h-32 bg-transparent rounded-full blur-2xl transition-all duration-700 pointer-events-none ${cornerOrbMap[item.color]}`} />
 
       <div>
         <div className="flex items-center justify-between mb-7">
-          {/* Theme-based Reusable Icon Container */}
+
           <div className={`w-12 h-12 bg-[#111c30] border border-slate-800/80 rounded-xl flex items-center justify-center p-3 text-slate-400
             group-hover:scale-105 transition-all duration-500 shadow-inner ${iconGlowMap[item.color]}`}>
             <CardIcon type={item.iconType} />
@@ -226,13 +226,13 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-[#0b1120] text-white py-28 px-4 sm:px-8 md:px-16 lg:px-24 relative overflow-hidden">
 
-      {/* Ambient background orbs */}
+
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none animate-pulse" style={{ animationDuration: '5s' }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Header */}
+
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-xl mb-5 backdrop-blur-md shadow-inner">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
@@ -252,14 +252,14 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        {/* Cards grid */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((item) => (
             <Card key={item.id} item={item} index={parseInt(item.id) - 1} />
           ))}
         </div>
 
-        {/* Bottom trust line */}
+
         <div className="mt-16 text-center">
           <p className="text-slate-500 text-xs tracking-wide font-medium">
             Trusted by{" "}
