@@ -65,6 +65,8 @@ const Toast = ({ msg, type }) =>
         </div>
     ) : null;
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function AdminStudentPage() {
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -95,7 +97,7 @@ export default function AdminStudentPage() {
             if (selectedSemester) queryParams.semester = selectedSemester;
             if (selectedYear) queryParams.year = selectedYear;
 
-            const res = await axios.get("http://localhost:5001/api/students", {
+            const res = await axios.get(`${API_URL}/api/students`, {
                 params: queryParams,
                 headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
@@ -139,10 +141,10 @@ export default function AdminStudentPage() {
         const headers = token ? { Authorization: `Bearer ${token}` } : {};
         try {
             if (editingId) {
-                await axios.put(`http://localhost:5001/api/students/${editingId}`, form, { headers });
+                await axios.put(`${API_URL}/api/students/${editingId}`, form, { headers });
                 notify("Student record updated successfully");
             } else {
-                await axios.post("http://localhost:5001/api/students", form, { headers });
+                await axios.post(`${API_URL}/api/students`, form, { headers });
                 notify("Student registered successfully");
             }
             setShowForm(false);
@@ -158,7 +160,7 @@ export default function AdminStudentPage() {
         if (!deleteConfirm) return;
         const token = localStorage.getItem("token");
         try {
-            await axios.delete(`http://localhost:5001/api/students/${deleteConfirm._id}`, {
+            await axios.delete(`${API_URL}/api/students/${deleteConfirm._id}`, {
                 headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
             notify("Student profile deleted permanently");
