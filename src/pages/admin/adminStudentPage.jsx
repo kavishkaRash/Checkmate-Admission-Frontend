@@ -53,7 +53,7 @@ const Field = ({ label, name, value, onChange, placeholder, type = "text", span 
 );
 
 const Section = ({ number, title }) => (
-    <h3 className="text-[10px] font-black uppercase tracking-[3px] text-secondary border-b border-accent/5 pb-2 mb-4 mt-2">
+    <h3 className="text-[10px] font-black uppercase tracking-[3px] text-accent/80 border-b border-accent/5 pb-2 mb-4 mt-2">
         {number}. {title}
     </h3>
 );
@@ -244,7 +244,7 @@ export default function AdminStudentPage() {
                 <div className="px-5 sm:px-8 py-5 bg-accent/[0.01] border-b border-accent/5 flex items-center justify-between">
                     <h3 className="font-syne font-bold text-sm text-accent/80 tracking-tight">
                         Active Profiles Directory{" "}
-                        {selectedSemester && <span className="text-secondary font-light">({selectedSemester} Intake)</span>}
+                        {selectedSemester && <span className="text-accent/70 font-light">({selectedSemester} Intake)</span>}
                         <span className="bg-secondary/20 text-accent text-[10px] font-black px-2.5 py-0.5 rounded-full ml-1.5">
                             {students.length} Filtered
                         </span>
@@ -262,7 +262,7 @@ export default function AdminStudentPage() {
                                 <div key={s._id} className="bg-white p-4 rounded-2xl border border-accent/5 space-y-3 shadow-sm">
                                     <div className="flex justify-between items-start">
                                         <div>
-                                            <span className="font-mono font-bold text-secondary text-[11px] block">{s.indexNo || "N/A"}</span>
+                                            <span className="font-mono font-bold text-accent text-[11px] block">{s.indexNo || "N/A"}</span>
                                             <h4 className="font-syne font-bold text-accent text-base mt-0.5">{s.name}</h4>
                                         </div>
                                         <span className="px-2 py-0.5 rounded text-[9px] font-black tracking-wider uppercase bg-accent/5 text-accent/70 border border-accent/5">
@@ -311,7 +311,7 @@ export default function AdminStudentPage() {
                                 <tbody className="text-accent text-sm divide-y divide-accent/[0.02]">
                                     {students.map((s) => (
                                         <tr key={s._id} className="hover:bg-secondary/[0.015] transition-colors group">
-                                            <td className="py-5 px-8 font-mono font-bold text-secondary text-xs">{s.indexNo || "N/A"}</td>
+                                            <td className="py-5 px-8 font-mono font-bold text-accent text-xs">{s.indexNo || "N/A"}</td>
                                             <td className="py-5 px-4">
                                                 <span className="font-syne font-bold text-accent group-hover:text-secondary transition-colors block">{s.name}</span>
                                                 {s.applicantPhone && (
@@ -368,7 +368,16 @@ export default function AdminStudentPage() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                                 <Info label="Birthday / Age" value={selectedStudent.birthday} />
                                 <Info label="Passport Number" value={selectedStudent.passportNumber} mono />
-                                <Info label="Email Address" value={selectedStudent.email} />
+                                
+
+                                <div>
+                                    <span className="text-accent/40 block text-[10px] font-black uppercase tracking-wider">Email Address</span>
+                                    {selectedStudent.email ? (
+                                        <a href={`mailto:${selectedStudent.email}`} className="text-blue-400 font-bold flex items-center gap-1 hover:underline mt-0.5">
+                                            <IoMailOutline size={14} /> {selectedStudent.email}
+                                        </a>
+                                    ) : <span className="text-accent/50 text-sm">Not Provided</span>}
+                                </div>
                                 
                                 <div>
                                     <span className="text-accent/40 block text-[10px] font-black uppercase tracking-wider">Applicant Mobile</span>
