@@ -1,16 +1,42 @@
-# React + Vite
+# Checkmate Admission
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack admission management web application built for **Checkmate**, a visa consultancy agency. The platform helps the agency manage student/client admissions online, replacing manual paperwork with a digital workflow.
 
-Currently, two official plugins are available:
+🔗 **Live site:** [checkmateadmission.com](https://checkmateadmission.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About the Project
 
-## React Compiler
+This is a real client project, built and maintained solo — covering everything from system architecture and API design to frontend development, deployment, and SEO.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+**Frontend** (this repo)
+- React
+- Vite
+- JavaScript (ES6+)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Backend** (separate repo)
+- Node.js
+- Express.js
+- MongoDB
+
+**Deployment**
+- Custom domain: `checkmateadmission.com`
+- Basic on-page SEO configured for search visibility
+
+## Features
+
+- Client/student admission form and workflow
+- Responsive UI for desktop and mobile
+- REST API integration with the backend service
+- Deployed on a live custom domain
+
+## Status
+
+🚧 **In active development** — features and content are being added iteratively based on client requirements.
+
+## Author
+
+**Kavishka Rashen**
+- GitHub: [@kavishkaRash](https://github.com/kavishkaRash)
+- Portfolio: [kavishka-portfolio.netlify.app](https://kavishka-portfolio.netlify.app/)
