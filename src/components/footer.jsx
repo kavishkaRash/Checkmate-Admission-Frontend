@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { HiMapPin, HiEnvelope, HiPhone } from "react-icons/hi2"; // Standardized Heroicons v2 Exports
+import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
@@ -47,10 +48,10 @@ export default function Footer() {
                     <div className="lg:col-span-2 space-y-4">
                         <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Explore</h4>
                         <ul className="space-y-2.5 text-xs font-semibold text-slate-400">
-                            <li><a href="#home" className="hover:text-blue-400 transition-colors">Home</a></li>
-                            <li><a href="#universities" className="hover:text-blue-400 transition-colors">Universities</a></li>
-                            <li><a href="#reviews" className="hover:text-blue-400 transition-colors">Success Stories</a></li>
-                            <li><a href="#faq" className="hover:text-blue-400 transition-colors">FAQs</a></li>
+                            <li><Link to="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
+                            <li><Link to="/korea-student-visa" className="hover:text-blue-400 transition-colors">Student Visa Korea</Link></li>
+                            <li><Link to="/about" className="hover:text-blue-400 transition-colors">About</Link></li>
+                            <li><Link to="/contact" className="hover:text-blue-400 transition-colors">Contacts</Link></li>
                         </ul>
                     </div>
 
@@ -58,10 +59,11 @@ export default function Footer() {
                     <div className="lg:col-span-2 space-y-4">
                         <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Top Universities</h4>
                         <ul className="space-y-2.5 text-xs font-semibold text-slate-400">
-                            <li><a href="#inu" className="hover:text-blue-400 transition-colors">Incheon National</a></li>
-                            <li><a href="#skku" className="hover:text-blue-400 transition-colors">Sungkyunkwan</a></li>
-                            <li><a href="#wsu" className="hover:text-blue-400 transition-colors">Woosong Uni</a></li>
-                            <li><a href="#kku" className="hover:text-blue-400 transition-colors">Konkuk Uni</a></li>
+                            <li><Link to="/university/ajou" className="hover:text-blue-400 transition-colors">Ajou University</Link></li>
+                            <li><Link to="/university/inu" className="hover:text-blue-400 transition-colors">Incheon National University</Link></li>
+                            <li><Link to="/university/konkuk" className="hover:text-blue-400 transition-colors">Konkuk Uni</Link></li>
+                            <li><Link to="/university/skku" className="hover:text-blue-400 transition-colors">Sungkyunkwan University</Link></li>
+                            
                         </ul>
                     </div>
 
@@ -74,17 +76,25 @@ export default function Footer() {
                                 <span className="text-blue-500 bg-white/5 p-1.5 rounded-lg border border-white/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 mt-0.5">
                                     <HiMapPin className="text-[15px]" />
                                 </span>
-                                <span className="leading-relaxed text-slate-400 group-hover:text-white transition-colors duration-300">
-                                    Colombo, Western Province,<br />Sri Lanka
+                                <a href="https://www.google.com/maps/place/Checkmate+Admission+Guide+(pvt)+Ltd/@6.9329683,79.9798375,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae257e8fcb300df:0x9fa7dccd98ae23d4!8m2!3d6.9329683!4d79.9824124!16s%2Fg%2F11x1llq2xq?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D" className="leading-relaxed text-slate-400 pointer:cursor hover:text-blue-400 group-hover:text-white transition-colors duration-300">
+                                    381/6 Kandy Road, Kaduwela<br />Sri Lanka
+                                </a>
+                            </li>
+                            <li className="flex items-start gap-3 group">
+                                <span className="text-blue-500 bg-white/5 p-1.5 rounded-lg border border-white/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 mt-0.5">
+                                    <HiMapPin className="text-[15px]" />
                                 </span>
+                                <a href="https://www.google.com/maps/place/CHECKMATE+ADMISSION+GUIDE+(PVT)+LDT/@8.3358101,80.4112811,17z/data=!3m1!4b1!4m6!3m5!1s0x3afcf500033ce99b:0x7e5199bb4b03a9a9!8m2!3d8.3358101!4d80.4112811!16s%2Fg%2F11zb58rykn?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D" className="leading-relaxed text-slate-400 hover:text-blue-400 group-hover:text-white transition-colors duration-300">
+                                    8CP6+8GC, Anuradhapura<br />Sri Lanka
+                                </a>
                             </li>
 
                             <li className="flex items-center gap-3 group">
                                 <span className="text-blue-500 bg-white/5 p-1.5 rounded-lg border border-white/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                     <HiEnvelope className="text-[15px]" />
                                 </span>
-                                <a href="mailto:info@checkmate.lk" className="text-slate-400 hover:text-blue-400 group-hover:text-white transition-colors duration-300">
-                                    info@checkmate.lk
+                                <a href="mailto:info@checkmateadmission.com" className="text-slate-400 hover:text-blue-400 group-hover:text-white transition-colors duration-300">
+                                    info@checkmateadmission.com
                                 </a>
                             </li>
 
@@ -92,10 +102,12 @@ export default function Footer() {
                                 <span className="text-blue-500 bg-white/5 p-1.5 rounded-lg border border-white/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                     <HiPhone className="text-[15px]" />
                                 </span>
-                                <a href="tel:+94112345678" className="text-slate-400 hover:text-blue-400 group-hover:text-white transition-colors duration-300">
-                                    +94 (11) 234-5678
+                                <a href="tel:+94112548212" className="text-slate-400 hover:text-blue-400 group-hover:text-white transition-colors duration-300">
+                                    +94 (11) 254-8212 
                                 </a>
                             </li>
+
+                            
                         </ul>
                     </div>
 
@@ -120,7 +132,7 @@ export default function Footer() {
 
                         <div className="flex items-center gap-3 pt-2 sm:pt-0">
                             <a 
-                                href="https://facebook.com" 
+                                href="https://www.facebook.com/CheckmateAdmissionGuideSL/" 
                                 target="_blank" 
                                 rel="noreferrer"
                                 className="w-9 h-9 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-slate-400 
@@ -131,7 +143,7 @@ export default function Footer() {
                             </a>
 
                             <a 
-                                href="https://instagram.com" 
+                                href="https://www.instagram.com/checkmate_admission/" 
                                 target="_blank" 
                                 rel="noreferrer"
                                 className="w-9 h-9 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-slate-400 

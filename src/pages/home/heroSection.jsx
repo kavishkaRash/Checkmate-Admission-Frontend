@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function HeroSection() {
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (video) {
+            video.muted = true;
+            video.defaultMuted = true;
+            video.play().catch(() => { });
+        }
+    }, []);
+
     return (
         <div className="bg-[#f8fafc] text-[#0f172a] relative min-h-screen w-full overflow-x-hidden font-sans select-none">
 
@@ -10,12 +21,18 @@ export default function HeroSection() {
 
                 <div className="absolute w-full h-full top-0 right-0 z-0">
                     <video
-                        className="w-full h-full object-cover object-center md:object-right mix-blend-normal opacity-40 md:opacity-100 scale-100"
+                        ref={videoRef}
+                        className="w-full h-full object-cover object-[center_20%] md:object-[right_15%] opacity-60 sm:opacity-70 md:opacity-100"
                         autoPlay
                         muted
                         loop
                         playsInline
-                        src="https://res.cloudinary.com/ddrbcubf8/video/upload/v1779896868/Asian_girl_sitting_on_suitcase_202605272117_l0hxyn.mp4"
+                        preload="auto"
+                        onEnded={(e) => {
+                            e.target.currentTime = 0;
+                            e.target.play();
+                        }}
+                        src="https://res.cloudinary.com/dbnwsu3ed/video/upload/f_auto,q_auto/v1789902015/new_bg2_a37dju.mp4"
                     />
                 </div>
 
@@ -29,19 +46,19 @@ export default function HeroSection() {
                 />
 
 
-                <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/20 via-[#f8fafc]/80 to-[#f8fafc] md:bg-gradient-to-r md:from-[#f8fafc] md:via-[#f8fafc]/60 md:to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/30 via-[#f8fafc]/85 to-[#f8fafc] md:bg-gradient-to-r md:from-[#f8fafc] md:via-[#f8fafc]/60 md:to-transparent z-10" />
             </div>
 
 
             <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.005)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.005)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-10" />
 
 
-            <section id="home" className="relative z-30 min-h-screen flex items-center px-4 sm:px-6 md:px-16 lg:px-32 pt-28 pb-20">
+            <section id="home" className="relative z-30 min-h-screen flex flex-col justify-center px-4 sm:px-6 md:px-16 lg:px-32 pt-24 sm:pt-28 pb-16 sm:pb-20">
 
                 <div className="w-full max-w-2xl relative z-30">
 
 
-                    <div className="inline-flex items-center gap-2.5 bg-white/90 border border-slate-200 text-blue-600 text-[10px] sm:text-[11px] font-bold tracking-widest uppercase px-3 sm:px-4 py-2 rounded-xl mb-6 sm:mb-8 shadow-sm backdrop-blur-sm">
+                    <div className="inline-flex items-center gap-2 sm:gap-2.5 bg-white/90 border border-slate-200 text-blue-600 text-[9px] sm:text-[11px] font-bold tracking-widest uppercase px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl mb-5 sm:mb-8 shadow-sm backdrop-blur-sm">
                         <span className="flex h-2 w-2 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
@@ -50,45 +67,70 @@ export default function HeroSection() {
                     </div>
 
 
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6 text-[#0f172a]">
-                        Empowering Your Journey<br />
+                    <h1 className="text-[28px] leading-[1.15] sm:text-5xl lg:text-6xl font-black tracking-tight sm:leading-[1.1] mb-4 sm:mb-6 text-[#0f172a]">
+                        Empowering Your Journey{" "}
+                        <br className="hidden sm:block" />
                         To <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Korean Higher Education</span>
                     </h1>
 
 
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-8 sm:mb-10 max-w-xl font-medium">
-                        Discover the unparalleled institution in Sri Lanka boasting the <span className="text-slate-900 font-semibold">highest visa success rate</span> for a prestigious <span className="text-blue-600 font-semibold">university that remains unmatched</span> by others. Join us to achieve your academic ambitions!            
+                    <p className="text-[13px] sm:text-base text-slate-600 leading-relaxed mb-6 sm:mb-10 max-w-xl font-medium bg-white/40 sm:bg-transparent backdrop-blur-[2px] sm:backdrop-blur-none rounded-lg sm:rounded-none p-2 sm:p-0 -mx-2 sm:mx-0">
+                        Discover the unparalleled institution in Sri Lanka boasting the <span className="text-slate-900 font-semibold">highest visa success rate</span> for a prestigious <span className="text-blue-600 font-semibold">university that remains unmatched</span> by others. Join us to achieve your academic ambitions!
                     </p>
 
 
-                    <div className="flex flex-wrap items-center gap-4 mb-12 sm:mb-16">
-                        <Link to="/appointment" className="w-full sm:w-auto bg-[#0f172a] text-white text-xs font-bold tracking-widest uppercase px-8 py-4 rounded-xl hover:bg-blue-600 shadow-md transition-all duration-300 transform hover:-translate-y-0.5 text-center">
+                    <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-10 sm:mb-16">
+                        <Link to="/appointment" className="w-full sm:w-auto bg-[#0f172a] text-white text-xs font-bold tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-blue-600 shadow-md transition-all duration-300 transform hover:-translate-y-0.5 text-center">
                             Get Free Consultation →
                         </Link>
-                        <a href="#reviews" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-slate-700 hover:text-blue-600 text-xs font-bold px-6 py-4 rounded-xl border border-slate-200 hover:border-blue-300 shadow-sm transition-all duration-300">
+                        <a href="#reviews" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-slate-700 hover:text-blue-600 text-xs font-bold px-6 py-3.5 sm:py-4 rounded-xl border border-slate-200 hover:border-blue-300 shadow-sm transition-all duration-300">
                             <span className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-xs pl-0.5 border border-slate-200">▶</span>
                             Watch Reviews
                         </a>
                     </div>
 
 
-                    <div className="grid grid-cols-3 gap-4 sm:gap-6 border-t border-slate-200 pt-8 max-w-md">
+                    <div className="grid grid-cols-3 gap-3 sm:gap-6 border-t border-slate-200 pt-6 sm:pt-8 max-w-md bg-white/40 sm:bg-transparent backdrop-blur-[2px] sm:backdrop-blur-none rounded-lg sm:rounded-none -mx-2 sm:mx-0 px-2 sm:px-0 pb-2 sm:pb-0">
                         {[
                             { value: "150+", label: "Visas Approved" },
                             { value: "98%", label: "Success Rate", highlight: true },
                             { value: "20+", label: "Partner Uni" }
                         ].map((stat, i) => (
                             <div key={i}>
-                                <div className={`text-xl sm:text-3xl font-black tracking-tight ${stat.highlight ? "text-blue-600" : "text-slate-900"}`}>
+                                <div className={`text-lg sm:text-3xl font-black tracking-tight ${stat.highlight ? "text-blue-600" : "text-slate-900"}`}>
                                     {stat.value}
                                 </div>
-                                <div className="text-[9px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider mt-1">
+                                <div className="text-[8px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider mt-1">
                                     {stat.label}
                                 </div>
                             </div>
                         ))}
                     </div>
 
+                </div>
+
+
+                <div className="xl:hidden mt-8 sm:mt-10 relative z-30">
+                    <div className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-lg shadow-slate-900/5">
+                        <div className="text-[9px] sm:text-[10px] font-bold tracking-widest text-blue-600 uppercase mb-3">Our Core Expertise</div>
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+                            {[
+                                "Direct University Admissions",
+                                "D-4 & D-2 Visa Consultation",
+                                "University Doucment Guidance",
+                                "Visa Document Guidance",
+                                "SOP Guidance & Preparation",
+                                "Show Money Support",
+                                "Financial Document Review",
+                                "University Interview Rooming Preparation"
+                            ].map((text, i) => (
+                                <div key={i} className="flex items-start gap-2">
+                                    <div className="w-4 h-4 shrink-0 rounded-md bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 text-[8px] mt-0.5">✓</div>
+                                    <div className="text-[10px] sm:text-[11px] text-slate-600 font-semibold leading-tight">{text}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
 
 
@@ -116,13 +158,13 @@ export default function HeroSection() {
             </section>
 
 
-            <div className="relative z-40 grid grid-cols-1 md:grid-cols-3 mx-4 sm:mx-6 md:mx-16 lg:mx-32 -mt-12 bg-[#0f172a] rounded-2xl border border-slate-800 shadow-xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-slate-800">
+            <div className="relative z-40 grid grid-cols-1 md:grid-cols-3 mx-4 sm:mx-6 md:mx-16 lg:mx-32 -mt-8 sm:-mt-12 bg-[#0f172a] rounded-2xl border border-slate-800 shadow-xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-slate-800">
                 {[
                     { title: "Visa Documentation", desc: "Meticulous verification of financial and academic records to guarantee visa success." },
                     { title: "Direct Placements", desc: "Fast-tracked application submission through our 15+ elite South Korean partners." },
                     { title: "On-Ground Assistance", desc: "Comprehensive support for student accommodation booking and part-time job guidance." }
                 ].map((feat, index) => (
-                    <div key={index} className="p-6 sm:p-8 hover:bg-white/[0.01] transition-colors duration-300">
+                    <div key={index} className="p-5 sm:p-6 md:p-8 hover:bg-white/[0.01] transition-colors duration-300">
                         <h3 className="text-sm font-bold text-white mb-2 tracking-tight flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
                             {feat.title}
@@ -131,7 +173,7 @@ export default function HeroSection() {
                     </div>
                 ))}
             </div>
-            a
+
         </div>
     );
 }

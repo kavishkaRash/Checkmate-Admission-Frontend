@@ -92,7 +92,7 @@ export default function AppointmentPage() {
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="John Doe"
+                                    placeholder="Your Full Name"
                                     value={fullName}
                                     onChange={(e) => setFullName(e.target.value)}
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary focus:bg-white transition-all"
@@ -106,7 +106,7 @@ export default function AppointmentPage() {
                                 </label>
                                 <input
                                     type="number"
-                                    placeholder="21"
+                                    placeholder="Your Age"
                                     value={age}
                                     onChange={(e) => setAge(e.target.value)}
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary focus:bg-white transition-all"
@@ -186,7 +186,7 @@ export default function AppointmentPage() {
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="+94 XX XXX XXXX"
+                                    placeholder="Your Phone Number"
                                     value={phoneNumber}
                                     onChange={(e) => setPhoneNumber(e.target.value)}
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary focus:bg-white transition-all"
@@ -238,7 +238,7 @@ export default function AppointmentPage() {
                                 </label>
                                 <input
                                     type="email"
-                                    placeholder="example@email.com"
+                                    placeholder="Email Address"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     className="w-full h-14 bg-accent/[0.02] border border-accent/10 rounded-2xl px-6 text-sm focus:outline-none focus:border-secondary focus:bg-white transition-all"
@@ -251,7 +251,7 @@ export default function AppointmentPage() {
                                     <IoChatboxEllipsesOutline className="text-secondary" /> Message / Notes
                                 </label>
                                 <textarea
-                                    placeholder="Tell us about your academic goals..."
+                                    placeholder="Message"
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     className="w-full h-32 bg-accent/[0.02] border border-accent/10 rounded-2xl p-6 text-sm focus:outline-none focus:border-secondary focus:bg-white transition-all resize-none"

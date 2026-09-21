@@ -122,148 +122,10 @@ const associateProgram = (title, overrides = {}) => ({
 
 
 export const universities = [
-  {
-    id: "konkuk",
-    name: "Konkuk University",
-    shortName: "Konkuk",
-    location: "Seoul (Gwangjin-gu)",
-    overview:
-      "Konkuk University is a top-10 private university in South Korea with a beautiful lake-centric Seoul campus. Its Korean Language Institute (est. 1998) is one of the most established in the country, and the university is known for strong English-taught undergraduate tracks and generous TOPIK-based scholarships.",
-    categories: [
-      {
-        type: "Language Program",
-        programs: [
-          langProgram("Korean Language Program", {
-            duration: "10 weeks / term (20–60 week tracks available)",
-            fees: "KRW 1,700,000 – 1,800,000 / term",
-          }),
-          langProgram("English Academic Program (EAP)", {
-            fees: "KRW 1,600,000 – 1,800,000 / term",
-          }),
-        ],
-      },
-    ],
-    features: [
-      "Beautiful large lake-centric campus",
-      "Top 10 private university in South Korea",
-      "TOPIK-based tuition waivers up to 60% for Korean Language Program graduates",
-    ],
-    students: "28,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=600&q=80",
-    bgGradient: "from-rose-600 to-orange-500",
-  },
-  {
-    id: "inu",
-    name: "Incheon National University (INU)",
-    shortName: "INU",
-    location: "Incheon (Songdo International City)",
-    overview:
-      "Incheon National University is a state-run research university located in Songdo, offering a globally connected campus minutes from Incheon International Airport.",
-    categories: [
-      {
-        type: "Language Program",
-        programs: [langProgram("Korean Language Program", { fees: "KRW 1,800,000 / term" })],
-      },
-      {
-        type: "Bachelor",
-        programs: [bachelorProgram("International Business & Economy", { fees: "KRW 3,200,000 / semester" })],
-      },
-    ],
-    features: [
-      "State-of-the-art international campus",
-      "Strategic location near Incheon Airport",
-      "Ultra-modern learning & sports facilities",
-    ],
-    students: "18,000+ Students from 80+ countries",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80",
-    bgGradient: "from-blue-600 to-cyan-500",
-  },
-  {
-    id: "skku",
-    name: "Sungkyunkwan University (SKKU)",
-    shortName: "SKKU",
-    location: "Seoul (Jongno-gu) + Suwon Campus",
-    overview:
-      "Founded in 1398, Sungkyunkwan University is one of Korea's oldest and most prestigious institutions, closely affiliated with Samsung Group and consistently ranked among the top 100 universities globally.",
-    categories: [
-      {
-        type: "Language Program",
-        programs: [langProgram("Korean Language Program", { fees: "KRW 1,900,000 / term" })],
-      },
-      {
-        type: "Bachelor's",
-        programs: [bachelorProgram("Bachelor's Degree Programs", { fees: "KRW 4,500,000 / semester" })],
-      },
-      {
-        type: "Master's",
-        programs: [masterProgram("Master's Degree Programs", { fees: "KRW 5,200,000 / semester" })],
-      },
-      {
-        type: "PhD Programs",
-        programs: [phdProgram("Doctoral Degree Programs", { fees: "KRW 5,800,000 / semester" })],
-      },
-    ],
-    features: [
-      "Historically founded in 1398",
-      "Deeply affiliated with Samsung Group",
-      "Ranked in the Top 100 Global Universities",
-    ],
-    students: "33,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1607237138185-eedd996259d9?auto=format&fit=crop&w=600&q=80",
-    bgGradient: "from-emerald-600 to-teal-500",
-  },
-  {
-    id: "woosong",
-    name: "Woosong University",
-    shortName: "Woosong",
-    location: "Daejeon",
-    overview:
-      "Woosong University is known for its highly international-friendly ecosystem, home to the prestigious SolBridge International School of Business and a consistently high visa approval rate for international students.",
-    categories: [
-      {
-        type: "Language Program",
-        programs: [langProgram("Korean Language Program", { fees: "KRW 1,600,000 / term" })],
-      },
-      {
-        type: "Bachelor",
-        programs: [bachelorProgram("Bachelor's Degree Programs", { fees: "KRW 3,000,000 / semester" })],
-      },
-      {
-        type: "Vocational Training",
-        programs: [associateProgram("Vocational Training Programs", { fees: "KRW 2,500,000 / semester" })],
-      },
-    ],
-    features: [
-      "Highly international-friendly ecosystem",
-      "Consistently high visa approval rate",
-      "Houses the prestigious SolBridge International School",
-    ],
-    students: "10,000+ Total Students",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80",
-    bgGradient: "from-indigo-600 to-purple-500",
-  },
-  {
-    id: "gachon",
-    name: "Gachon University",
-    shortName: "Gachon",
-    location: "Seongnam / Incheon",
-    overview:
-      "Gachon University is a large private university spread across Seongnam and Incheon, well known for its medical, health-science and business programs and an actively growing international student body.",
-    categories: [
-      { type: "Bachelor", programs: [bachelorProgram("Global Business")] },
-    ],
-    features: [
-      "Strong medical & health-sciences reputation",
-      "Modern dual-campus facilities (Seongnam & Incheon)",
-      "Growing international student community",
-    ],
-    students: "25,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80",
-    bgGradient: "from-blue-600 to-indigo-500",
-  },
-  {
+   {
     id: "ajou",
     name: "Ajou University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817391/Ajou_Uni_logo_jv8cp2.png",
     shortName: "Ajou",
     location: "Suwon",
     overview:
@@ -295,12 +157,162 @@ export const universities = [
       "Close to Seoul via Suwon transit links",
     ],
     students: "14,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807201/Ajou_Uni_pw2pbo.jpg",
     bgGradient: "from-teal-600 to-cyan-500",
   },
+  
+  {
+    id: "konkuk",
+    name: "Konkuk University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817864/Konkuk_Logo_fzpfow-removebg-preview_gymw1c.png",
+    shortName: "Konkuk",
+    location: "Seoul (Gwangjin-gu)",
+    overview:
+      "Konkuk University is a top-10 private university in South Korea with a beautiful lake-centric Seoul campus. Its Korean Language Institute (est. 1998) is one of the most established in the country, and the university is known for strong English-taught undergraduate tracks and generous TOPIK-based scholarships.",
+    categories: [
+      {
+        type: "Language Program",
+        programs: [
+          langProgram("Korean Language Program", {
+            duration: "10 weeks / term (20–60 week tracks available)",
+            fees: "KRW 1,700,000 – 1,800,000 / term",
+          }),
+          langProgram("English Academic Program (EAP)", {
+            fees: "KRW 1,600,000 – 1,800,000 / term",
+          }),
+        ],
+      },
+    ],
+    features: [
+      "Beautiful large lake-centric campus",
+      "Top 10 private university in South Korea",
+      "TOPIK-based tuition waivers up to 60% for Korean Language Program graduates",
+    ],
+    students: "28,000+ Active Students",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789809036/KonKuk_Uni_smbr8u.jpg",
+    bgGradient: "from-rose-600 to-orange-500",
+  },
+
+  {
+    id: "inu",
+    name: "Incheon National University (INU)",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817413/Incheo_logo_adrbwu.webp",
+    shortName: "INU",
+    location: "Incheon (Songdo International City)",
+    overview:
+      "Incheon National University is a state-run research university located in Songdo, offering a globally connected campus minutes from Incheon International Airport.",
+    categories: [
+      {
+        type: "Language Program",
+        programs: [langProgram("Korean Language Program", { fees: "KRW 1,800,000 / term" })],
+      },
+      {
+        type: "Bachelor",
+        programs: [bachelorProgram("International Business & Economy", { fees: "KRW 3,200,000 / semester" })],
+      },
+    ],
+    features: [
+      "State-of-the-art international campus",
+      "Strategic location near Incheon Airport",
+      "Ultra-modern learning & sports facilities",
+    ],
+    students: "18,000+ Students from 80+ countries",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807203/Incheon_Uni_lmbew7.jpg",
+    bgGradient: "from-blue-600 to-cyan-500",
+  },
+
+  {
+    id: "skku",
+    name: "Sungkyunkwan University (SKKU)",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817857/Sungkyunkwan_logo_wlrhzi-removebg-preview_bgaml3.png",
+    shortName: "SKKU",
+    location: "Seoul (Jongno-gu) + Suwon Campus",
+    overview:
+      "Founded in 1398, Sungkyunkwan University is one of Korea's oldest and most prestigious institutions, closely affiliated with Samsung Group and consistently ranked among the top 100 universities globally.",
+    categories: [
+      {
+        type: "Language Program",
+        programs: [langProgram("Korean Language Program", { fees: "KRW 1,900,000 / term" })],
+      },
+      {
+        type: "Bachelor's",
+        programs: [bachelorProgram("Bachelor's Degree Programs", { fees: "KRW 4,500,000 / semester" })],
+      },
+      {
+        type: "Master's",
+        programs: [masterProgram("Master's Degree Programs", { fees: "KRW 5,200,000 / semester" })],
+      },
+      {
+        type: "PhD Programs",
+        programs: [phdProgram("Doctoral Degree Programs", { fees: "KRW 5,800,000 / semester" })],
+      },
+    ],
+    features: [
+      "Historically founded in 1398",
+      "Deeply affiliated with Samsung Group",
+      "Ranked in the Top 100 Global Universities",
+    ],
+    students: "33,000+ Active Students",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807203/Sungkyunkwan_Uni_oppzih.jpg",
+    bgGradient: "from-emerald-600 to-teal-500",
+  },
+
+  {
+    id: "woosong",
+    name: "Woosong University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817406/woosong_University_zixysi.png",
+    shortName: "Woosong",
+    location: "Daejeon",
+    overview:
+      "Woosong University is known for its highly international-friendly ecosystem, home to the prestigious SolBridge International School of Business and a consistently high visa approval rate for international students.",
+    categories: [
+      {
+        type: "Language Program",
+        programs: [langProgram("Korean Language Program", { fees: "KRW 1,600,000 / term" })],
+      },
+      {
+        type: "Bachelor",
+        programs: [bachelorProgram("Bachelor's Degree Programs", { fees: "KRW 3,000,000 / semester" })],
+      },
+      {
+        type: "Vocational Training",
+        programs: [associateProgram("Vocational Training Programs", { fees: "KRW 2,500,000 / semester" })],
+      },
+    ],
+    features: [
+      "Highly international-friendly ecosystem",
+      "Consistently high visa approval rate",
+      "Houses the prestigious SolBridge International School",
+    ],
+    students: "10,000+ Total Students",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807203/Woosong_Uni_uirzdl.jpg",
+    bgGradient: "from-indigo-600 to-purple-500",
+  },
+  {
+    id: "gachon",
+    name: "Gachon University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817862/gachon_uni_logo_n1uzgj-removebg-preview_nn3z57.png",
+    shortName: "Gachon",
+    location: "Seongnam / Incheon",
+    overview:
+      "Gachon University is a large private university spread across Seongnam and Incheon, well known for its medical, health-science and business programs and an actively growing international student body.",
+    categories: [
+      { type: "Bachelor", programs: [bachelorProgram("Global Business")] },
+    ],
+    features: [
+      "Strong medical & health-sciences reputation",
+      "Modern dual-campus facilities (Seongnam & Incheon)",
+      "Growing international student community",
+    ],
+    students: "25,000+ Active Students",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807202/Gachon_Uni_yt7jvi.png",
+    bgGradient: "from-blue-600 to-indigo-500",
+  },
+
   {
     id: "namseoul",
     name: "Namseoul University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817418/Nameseoul_Uni_Logo_m8rrlc.png",
     shortName: "Namseoul",
     location: "Cheonan",
     overview:
@@ -327,12 +339,13 @@ export const universities = [
       "Diverse business & entrepreneurship programs",
     ],
     students: "12,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807205/Nam_Seoul_Uni_vnt0zu.jpg",
     bgGradient: "from-purple-600 to-pink-500",
   },
   {
     id: "samhyook",
     name: "Sahmyook University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817411/sahmyook_uni_logo_luy7ce.svg",
     shortName: "Sahmyook",
     location: "Seoul (Nowon-gu)",
     overview:
@@ -368,12 +381,14 @@ export const universities = [
       "Seoul campus with a close-knit academic community",
     ],
     students: "8,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807202/Sahmyook_Uni_ushlhi.jpg",
     bgGradient: "from-green-600 to-emerald-500",
   },
+
   {
     id: "woosang",
     name: "Woosong University (Global Management Campus)",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817406/woosong_University_zixysi.png",
     shortName: "WooSang",
     location: "Daejeon",
     overview:
@@ -407,12 +422,14 @@ export const universities = [
       "Full Bachelor's–Master's–PhD pathway in Global Management",
     ],
     students: "9,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807203/Woosong_Uni_uirzdl.jpg",
     bgGradient: "from-orange-600 to-red-500",
   },
+
   {
     id: "dong-a",
     name: "Dong-a University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817860/Dong-a_Uni_zrrsle-removebg-preview_sumnc9.png",
     shortName: "Dong-a",
     location: "Busan",
     overview:
@@ -442,12 +459,14 @@ export const universities = [
       "Strong regional industry connections in Busan",
     ],
     students: "18,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807201/Dong-a_Uni_w6jubi.jpg",
     bgGradient: "from-sky-600 to-blue-500",
   },
+
   {
     id: "dong-eui",
     name: "Dong-Eui University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817399/dong-eui_logo_iu9i6m.webp",
     shortName: "Dong-Eui",
     location: "Busan",
     overview:
@@ -479,12 +498,14 @@ export const universities = [
       "Busan coastal campus location",
     ],
     students: "13,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807201/Dong-eui_Uni_lp9xjm.jpg",
     bgGradient: "from-cyan-600 to-blue-500",
   },
+
   {
     id: "hoseo",
     name: "Hoseo University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817401/Hoseo_Uni_Logo_pfjxmc.svg",
     shortName: "Hoseo",
     location: "Asan / Cheonan",
     overview:
@@ -506,12 +527,14 @@ export const universities = [
       "Campus locations in Asan and Cheonan",
     ],
     students: "10,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807202/Hosea_Uni_fwjozp.jpg",
     bgGradient: "from-lime-600 to-green-500",
   },
+
   {
     id: "anyang",
     name: "Anyang University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817392/Anyang_Uni_wmg9ao.svg",
     shortName: "Anyang",
     location: "Anyang",
     overview:
@@ -525,12 +548,14 @@ export const universities = [
       "Personalized academic support",
     ],
     students: "4,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807201/Anyang_Uni_hok406.jpg",
     bgGradient: "from-amber-600 to-orange-500",
   },
+
   {
     id: "kyungsung",
     name: "Kyungsung University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817859/kyungsung_University_logo_dzqpd7-removebg-preview_ebvfet.png",
     shortName: "Kyungsung",
     location: "Busan",
     overview:
@@ -563,12 +588,14 @@ export const universities = [
       "Busan campus with active international office",
     ],
     students: "15,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807202/kyungsung_Uni_lthldt.jpg",
     bgGradient: "from-fuchsia-600 to-pink-500",
   },
+
   {
     id: "bufs",
     name: "Busan University of Foreign Studies (BUFS)",
+    logo:"https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817394/Busan-Woman_uni_logo_z5rdwv.svg",
     shortName: "BUFS",
     location: "Busan",
     overview:
@@ -597,12 +624,14 @@ export const universities = [
       "Busan coastal campus location",
     ],
     students: "9,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807201/Busan_Uni_fwxyho.jpg",
     bgGradient: "from-violet-600 to-purple-500",
   },
+
   {
     id: "silla",
     name: "Silla University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817403/Silla_Uni_Logo_iqvrga.svg",
     shortName: "Silla",
     location: "Busan",
     overview:
@@ -629,12 +658,13 @@ export const universities = [
       "Evening Master's option for working professionals",
     ],
     students: "8,500+ Active Students",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807203/Silla_Uni_e0spts.jpg",
     bgGradient: "from-red-600 to-rose-500",
   },
   {
     id: "ysu",
     name: "Youngsan University (YSU)",
+    logo:"https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817409/Youngsan_Uni_logo_hhijzd.svg",
     shortName: "YSU",
     location: "Busan / Yangsan",
     overview:
@@ -667,12 +697,14 @@ export const universities = [
       "Strong logistics & hospitality industry links",
     ],
     students: "7,500+ Active Students",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807201/Youngson_uni_pnfaf4.jpg",
     bgGradient: "from-yellow-600 to-amber-500",
   },
+
   {
     id: "tongmyung",
     name: "Tongmyong University",
+    logo:"https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817858/Tongmyong_Logo_kfq3co-removebg-preview_pzfwep.png",
     shortName: "Tongmyong",
     location: "Busan",
     overview:
@@ -697,12 +729,13 @@ export const universities = [
       "Busan campus with modern engineering facilities",
     ],
     students: "6,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807203/Tongmyong_Uni_stbxft.jpg",
     bgGradient: "from-stone-600 to-neutral-500",
   },
   {
     id: "sejong",
     name: "Sejong University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817408/Sejong_University_logo_ukf7nb.svg",
     shortName: "Sejong",
     location: "Seoul (Gwangjin-gu)",
     overview:
@@ -746,12 +779,14 @@ export const universities = [
       "TOPIK & English-proficiency based scholarships up to 100%",
     ],
     students: "16,000+ Undergraduate Students",
-    image: "https://images.unsplash.com/photo-1607237138185-eedd996259d9?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789808629/Sejong_Uni_amqj62.jpg",
     bgGradient: "from-blue-700 to-indigo-600",
   },
+
   {
     id: "hufs",
     name: "Hankuk University of Foreign Studies",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817402/Hankuk_Uni_Logo_ru0u8k.png",
     shortName: "HUFS",
     location: "Seoul (Dongdaemun-gu) + Global Campus (Yongin)",
     overview:
@@ -778,13 +813,14 @@ export const universities = [
       "Campuses in both Seoul and Yongin (Global Campus)",
     ],
     students: "20,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789807202/Hangkuk_uNI_ascvfq.jpg",
     bgGradient: "from-slate-600 to-gray-500",
   },
-  // Continue On this Line..
+  
   {
     id: "chungbuk",
     name: "Chungbuk National University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817396/Chungbuk_University_logo_tvovti.png",
     shortName: "Chungbuk",
     location: "Cheongju",
     overview:
@@ -811,12 +847,14 @@ export const universities = [
       "Full Bachelor's-to-Master's pathway",
     ],
     students: "22,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789808630/Chungbuk_Uni_snxqoe.jpg",
     bgGradient: "from-red-700 to-orange-600",
   },
+
   {
     id: "ulsan-college",
     name: "University College of Ulsan",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817863/Ulsan_Logo_rzixi3-removebg-preview_oz0xbe.png",
     shortName: "Ulsan College",
     location: "Ulsan",
     overview:
@@ -836,12 +874,14 @@ export const universities = [
       "Lower overall tuition compared to 4-year universities",
     ],
     students: "5,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789808628/Ulsan_Uni_zpuxfl.webp",
     bgGradient: "from-teal-700 to-cyan-600",
   },
+
   {
     id: "busan-womens",
     name: "Busan Women's College",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817394/Busan-Woman_uni_logo_z5rdwv.svg",
     shortName: "Busan Women's",
     location: "Busan",
     overview:
@@ -855,12 +895,14 @@ export const universities = [
       "Practical, skills-based curriculum",
     ],
     students: "3,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789808629/Busan_Woman_Uni_rkubtx.jpg",
     bgGradient: "from-pink-700 to-rose-600",
   },
+
   {
     id: "seojeong",
     name: "Seojeong University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817407/seojeong_logo_xtci9h.webp",
     shortName: "Seojeong",
     location: "Yangju, Gyeonggi-do",
     overview:
@@ -881,12 +923,14 @@ export const universities = [
       "Strong industry-placement focus",
     ],
     students: "4,500+ Active Students",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789811052/seojeong_uni_rus2fz.jpg",
     bgGradient: "from-emerald-700 to-green-600",
   },
+
   {
     id: "daekyeung",
     name: "Daekyeung University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817856/daekyung_uni_logo_r5fafs-removebg-preview_lqcrbu.png",
     shortName: "Daekyeung",
     location: "Gyeongsan, Gyeongsangbuk-do",
     overview:
@@ -900,12 +944,14 @@ export const universities = [
       "Strong industry placement partnerships",
     ],
     students: "3,500+ Active Students",
-    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789808630/daekyeung_Uni_qz22aj.jpg",
     bgGradient: "from-indigo-700 to-blue-600",
   },
+
   {
     id: "sunmoon",
     name: "Sun Moon University",
+    logo: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789817405/Sunmoon_Logo_yjirz1.svg",
     shortName: "Sun Moon",
     location: "Asan",
     overview:
@@ -945,7 +991,7 @@ export const universities = [
       "Strong semiconductor & mobility engineering research focus",
     ],
     students: "11,000+ Active Students",
-    image: "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=600&q=80",
+    image: "https://res.cloudinary.com/ddrbcubf8/image/upload/v1789808630/sun_moon_Uni_h6sooq.jpg",
     bgGradient: "from-orange-700 to-amber-600",
   },
 ];

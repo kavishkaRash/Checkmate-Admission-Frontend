@@ -5,7 +5,7 @@ const reasons = [
     id: "01",
     title: "98% Visa Success Rate",
     desc: "Sri Lanka's highest visa approval rate. Our profile-matching process ensures your application is bulletproof before it reaches the embassy.",
-    stat: "300+ approvals",
+    stat: "150+ approvals",
     statLabel: "and counting",
     iconType: "chart",
     color: "cyan",
@@ -13,8 +13,8 @@ const reasons = [
   {
     id: "02",
     title: "Direct University Access",
-    desc: "No middlemen. We work directly with 15+ elite Korean universities — admission letters faster, smoother, guaranteed.",
-    stat: "15+ unis",
+    desc: "No middlemen. We work directly with 15+ elite Korean universities - admission letters faster, smoother, guaranteed.",
+    stat: "20+ unis",
     statLabel: "direct partners",
     iconType: "handshake",
     color: "teal",
@@ -22,7 +22,7 @@ const reasons = [
   {
     id: "03",
     title: "Zero Hidden Fees",
-    desc: "What we quote is what you pay. Full transparency on tuition, visa fees, and university charges — from day one.",
+    desc: "What we quote is what you pay. Full transparency on tuition, visa fees, and university charges - from day one.",
     stat: "100%",
     statLabel: "transparent pricing",
     iconType: "diamond",
@@ -31,7 +31,7 @@ const reasons = [
   {
     id: "04",
     title: "Interview & Doc Prep",
-    desc: "Mock embassy interviews, document reviews, and expert coaching — so you walk into that interview confident and prepared.",
+    desc: "Mock embassy interviews, document reviews, and expert coaching - so you walk into that interview confident and prepared.",
     stat: "Expert",
     statLabel: "guided preparation",
     iconType: "target",
@@ -248,7 +248,7 @@ export default function WhyChooseUs() {
 
           <p className="text-slate-400 text-[13.5px] leading-relaxed max-w-xl mx-auto font-medium">
             Hundreds of Sri Lankan students trusted Checkmate to get them to Korea.
-            Here's exactly why — and why you should too.
+            Here's exactly why - and why you should too.
           </p>
         </div>
 
@@ -263,7 +263,7 @@ export default function WhyChooseUs() {
         <div className="mt-16 text-center">
           <p className="text-slate-500 text-xs tracking-wide font-medium">
             Trusted by{" "}
-            <span className="text-cyan-400 font-bold">300+ Sri Lankan students</span>
+            <span className="text-cyan-400 font-bold">150+ Sri Lankan students</span>
             {" "}who are now studying in South Korea 🇰🇷
           </p>
         </div>

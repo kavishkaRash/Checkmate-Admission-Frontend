@@ -72,7 +72,7 @@ export default function CTABanner() {
                             </Link>
 
 
-                            <Link to="https://wa.me/+94776022231" className="group/wa w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-[#25D366]/10 border border-white/10 hover:border-[#25D366]/30 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-slate-200 hover:text-white text-center backdrop-blur-sm flex items-center justify-center gap-2.5">
+                            <Link to="https://wa.me/+94711989288" className="group/wa w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-[#25D366]/10 border border-white/10 hover:border-[#25D366]/30 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 text-slate-200 hover:text-white text-center backdrop-blur-sm flex items-center justify-center gap-2.5">
                                 <FaWhatsapp className="text-[16px] text-slate-400 group-hover/wa:text-[#25D366] transition-colors duration-300" />
                                 Talk to an Expert via WhatsApp
                             </Link>

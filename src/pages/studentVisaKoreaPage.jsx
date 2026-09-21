@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import UniversityModal from "../components/UniversityModal";
+import { Link } from "react-router-dom";
 import { 
   HiMapPin, HiChevronRight, HiIdentification, HiCamera, HiDocumentText, 
   HiAcademicCap, HiBuildingLibrary, HiBanknotes, HiUserGroup, HiHomeModern, 
@@ -10,7 +10,6 @@ import {
 } from "react-icons/hi2";
 
 import { documents, requirements, processSteps, faqs, universities } from "../data/koreaData";
-
 
 function getIcon(iconId) {
   const iconClass = "text-blue-600 text-xl flex-shrink-0";
@@ -70,17 +69,9 @@ function FAQItem({ item, index }) {
 }
 
 export default function StudentVisaKoreaPage() {
-  const [selectedUni, setSelectedUni] = useState(null);
-
-  useEffect(() => {
-    document.body.style.overflow = selectedUni ? "hidden" : "unset";
-    return () => { document.body.style.overflow = "unset"; };
-  }, [selectedUni]);
-
   return (
     <div className="bg-[#f8fafc] text-slate-900 font-sans overflow-x-hidden">
       <Header />
-
 
       <section className="relative bg-slate-950 pt-36 pb-32 px-4 sm:px-6 md:px-16 lg:px-32 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.12) 0%, transparent 65%)" }} />
@@ -128,7 +119,6 @@ export default function StudentVisaKoreaPage() {
         </div>
       </section>
 
-
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
@@ -137,36 +127,43 @@ export default function StudentVisaKoreaPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {universities.map((uni) => (
-              <div key={uni.id} className="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
-                <div>
-                  <div className="h-44 bg-slate-200 relative overflow-hidden">
-                    <img src={uni.image} alt={uni.name} className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
-                    <div className="absolute top-3 right-3 bg-white/90 border border-slate-150 backdrop-blur-sm rounded-lg px-2.5 py-1 text-[10px] font-bold text-slate-800 shadow-sm">{uni.shortName}</div>
+            {universities.map((uni) => {
+              const programTypes = uni.categories.map((c) => c.type).join(", ");
+
+              return (
+                <div key={uni.id} className="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
+                  <div>
+                    <div className="h-44 bg-slate-200 relative overflow-hidden">
+                      <img src={uni.image} alt={uni.name} className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
+                      <div className="absolute top-3 right-3 bg-white/90 border border-slate-150 backdrop-blur-sm rounded-lg px-2.5 py-1 text-[10px] font-bold text-slate-800 shadow-sm">{uni.shortName}</div>
+                    </div>
+                    <div className="p-5">
+                      <div className="flex items-center gap-1.5 text-slate-400 text-xs font-medium mb-2">
+                        <HiMapPin className="text-blue-600 text-base flex-shrink-0" />
+                        <span className="truncate">{uni.location}</span>
+                      </div>
+                      <h3 className="text-sm font-bold text-slate-900 leading-tight mb-3 line-clamp-1 group-hover:text-blue-600 transition-colors">{uni.name}</h3>
+                      <div className="space-y-1 text-[11px] text-slate-500 font-medium">
+                        <div className="truncate">• Programs: {programTypes}</div>
+                        <div className="truncate">• {uni.students}</div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-1.5 text-slate-400 text-xs font-medium mb-2">
-                      <HiMapPin className="text-blue-600 text-base flex-shrink-0" />
-                      <span className="truncate">{uni.location}</span>
-                    </div>
-                    <h3 className="text-sm font-bold text-slate-900 leading-tight mb-3 line-clamp-1 group-hover:text-blue-600 transition-colors">{uni.name}</h3>
-                    <div className="space-y-1 text-[11px] text-slate-500 font-medium">
-                      <div>• Intakes: {uni.intakes}</div>
-                      <div className="truncate">• {uni.students}</div>
-                    </div>
+
+                  <div className="p-5 pt-0">
+                    <Link
+                      to={`/university/${uni.id}`}
+                      className="w-full inline-flex items-center justify-center gap-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-blue-600 hover:text-white font-bold text-[11px] uppercase tracking-wider py-3 rounded-xl transition-all"
+                    >
+                      View Details <HiChevronRight className="text-xs" />
+                    </Link>
                   </div>
                 </div>
-                <div className="p-5 pt-0">
-                  <button onClick={() => setSelectedUni(uni)} className="w-full inline-flex items-center justify-center gap-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-blue-600 hover:text-white font-bold text-[11px] uppercase tracking-wider py-3 rounded-xl transition-all">
-                    View Details <HiChevronRight className="text-xs" />
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
-
 
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32">
         <div className="max-w-7xl mx-auto">
@@ -187,7 +184,6 @@ export default function StudentVisaKoreaPage() {
           </div>
         </div>
       </section>
-
 
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
@@ -210,7 +206,6 @@ export default function StudentVisaKoreaPage() {
           </div>
         </div>
       </section>
-
 
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32">
         <div className="max-w-7xl mx-auto">
@@ -237,7 +232,6 @@ export default function StudentVisaKoreaPage() {
         </div>
       </section>
 
-
       <section className="py-24 px-4 sm:px-6 md:px-16 lg:px-32 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
@@ -249,9 +243,6 @@ export default function StudentVisaKoreaPage() {
           </div>
         </div>
       </section>
-
-
-      <UniversityModal selectedUni={selectedUni} onClose={() => setSelectedUni(null)} />
 
       <Footer />
     </div>

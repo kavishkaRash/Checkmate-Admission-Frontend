@@ -13,6 +13,8 @@ import {
 import { FaPassport } from "react-icons/fa6";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import { Link } from "react-router-dom";
+import { AiOutlineAim } from "react-icons/ai";
 
 
 function useReveal(delay = 0) {
@@ -62,31 +64,31 @@ function Counter({ target, suffix = "", duration = 1500 }) {
 
 const team = [
   {
-    name: "Kavishka Rajapaksha",
-    role: "Founder & CEO",
-    bio: "10+ years in international student placement. Former Education Attaché in Seoul.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&h=400&q=80",
+    name: "Kalinga Wickramaratna",
+    role: "Director",
+    // bio: "10+ years in international student placement. Former Education Attaché in Seoul.",
+    image: "https://res.cloudinary.com/dbnwsu3ed/image/upload/v1789946835/kalinga_tgirvp.png",
     color: "blue",
   },
   {
-    name: "Dilani Perera",
-    role: "Head of Visa Consulting",
-    bio: "Expert in Korean D-4 & D-2 visa processes. 500+ successful visa applications.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=400&q=80",
+    name: "Iresha Gallageh",
+    role: "Director",
+    // bio: "Expert in Korean D-4 & D-2 visa processes. 150+ successful visa applications.",
+    image: "https://res.cloudinary.com/dbnwsu3ed/image/upload/v1789946836/image-clean_jn7ues.png",
     color: "indigo",
   },
   {
-    name: "Chamara Silva",
-    role: "University Relations Manager",
-    bio: "Manages direct partnerships with 15+ Korean universities. Based in Seoul.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&h=400&q=80",
+    name: "Malinga Dissanayake",
+    role: "Director",
+    // bio: "Manages direct partnerships with 15+ Korean universities. Based in Seoul.",
+    image: "https://res.cloudinary.com/dbnwsu3ed/image/upload/v1789946838/ChatGPT_Image_Sep_21_2026_04_52_17_AM_qo60rl.png",
     color: "green",
   },
   {
-    name: "Nimesha Fernando",
-    role: "Student Success Advisor",
-    bio: "Post-arrival support specialist. Helps students settle into Korean university life.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&h=400&q=80",
+    name: "Sinthiya Khan",
+    role: "Director",
+    // bio: "Post-arrival support specialist. Helps students settle into Korean university life.",
+    image: "https://res.cloudinary.com/dbnwsu3ed/image/upload/v1789946838/ChatGPT_Image_Sep_21_2026_04_50_39_AM_jtwxtn.png",
     color: "purple",
   },
 ];
@@ -100,7 +102,7 @@ const colorMap = {
 
 
 const values = [
-  { icon: <HiSparkles className="text-blue-600 text-lg" />, title: "Precision",       desc: "Every document, every detail — reviewed twice before submission. We don't do sloppy work." },
+  { icon: <AiOutlineAim className="text-blue-600 text-lg" />, title: "Precision",       desc: "Every document, every detail — reviewed twice before submission. We don't do sloppy work." },
   { icon: <HiScale className="text-blue-600 text-lg" />, title: "Transparency",    desc: "Zero hidden fees. Zero surprises. What we quote is exactly what you pay — from day one." },
   { icon: <HiBriefcase className="text-blue-600 text-lg" />, title: "Partnership",     desc: "We're not just agents. We're your partners — before, during, and after you land in Korea." },
   { icon: <HiCheckCircle className="text-blue-600 text-lg" />, title: "Excellence",      desc: "98% visa success rate isn't luck. It's the result of meticulous preparation and expert guidance." },
@@ -173,7 +175,7 @@ export default function AboutUs() {
           </h1>
 
           <p className="text-white/50 text-sm sm:text-base leading-relaxed max-w-xl font-medium">
-            Checkmate Admission is Sri Lanka's most trusted Korea student visa consultancy —
+            Checkmate Admission is Sri Lanka's most trusted Korea student visa consultancy -
             built on transparency, precision, and a genuine passion for student success.
           </p>
         </div>
@@ -186,10 +188,10 @@ export default function AboutUs() {
       <section className="px-4 sm:px-6 md:px-16 lg:px-32 -mt-12 pb-20 relative z-30">
         <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { value: 300, suffix: "+", label: "Students Placed",      color: "text-[#0f172a]" },
+            { value: 150, suffix: "+", label: "Students Placed",      color: "text-[#0f172a]" },
             { value: 98,  suffix: "%", label: "Visa Success Rate",    color: "text-blue-600" },
-            { value: 15,  suffix: "+", label: "Partner Universities", color: "text-[#0f172a]" },
-            { value: 6,   suffix: "+", label: "Years of Experience",  color: "text-[#0f172a]" },
+            { value: 20,  suffix: "+", label: "Partner Universities", color: "text-[#0f172a]" },
+            { value: 4,   suffix: "+", label: "Years of Experience",  color: "text-[#0f172a]" },
           ].map((s, i) => (
             <div key={i} className="bg-white border border-slate-200/80 rounded-2xl px-5 py-6 text-center hover:shadow-xl hover:border-blue-100 hover:translate-y-[-2px] transition-all duration-300">
               <div className={`text-3xl sm:text-4xl font-black tracking-tight ${s.color}`}>
@@ -213,21 +215,22 @@ export default function AboutUs() {
 
 
           <div className="relative">
-            <div className="bg-[#0f172a] rounded-3xl p-8 sm:p-10 relative overflow-hidden border border-slate-800 shadow-xl">
-              <div className="absolute top-0 right-0 w-64 h-64 pointer-events-none"
-                style={{ background: "radial-gradient(circle, rgba(37,99,235,0.15), transparent)" }} />
+            <div className="bg-[#0f172a] rounded-3xl relative overflow-hidden border border-slate-800 shadow-xl aspect-[4/3] sm:aspect-[16/11]">
+              <img
+                src="https://res.cloudinary.com/dbnwsu3ed/image/upload/v1789943924/ChatGPT_Image_Sep_21_2026_04_08_20_AM_ih6hxr.png"
+                alt="Checkmate Admission story"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/70 via-transparent to-transparent pointer-events-none" />
 
-              <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center mb-6">
-                 <span className="text-xl text-blue-400">♟️</span>
-              </div>
               
             </div>
 
 
             <div className="absolute -bottom-6 -right-2 bg-white border border-slate-200 rounded-2xl p-5 shadow-xl hidden sm:block">
-              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Founded</div>
-              <div className="text-2xl font-black text-[#0f172a]">2019</div>
-              <div className="text-[11px] text-slate-400 font-medium">Colombo, Sri Lanka</div>
+              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1"> Opening Branch</div>
+              <div className="text-2xl font-black text-[#0f172a]">2026</div>
+              <div className="text-[11px] text-slate-400 font-medium">Anuradhapura, Sri Lanka</div>
             </div>
           </div>
 
@@ -241,11 +244,7 @@ export default function AboutUs() {
               </span>
             </h2>
             <div className="space-y-4 text-slate-500 text-sm leading-relaxed font-medium">
-              <p>
-                In 2019, our founder Kavishka sat across from a brilliant student who had been rejected
-                by two Korean universities — not because of her grades, but because of incorrect documentation
-                prepared by an unreliable agent.
-              </p>
+              
               <p>
                 That moment sparked Checkmate Admission. We built a consultancy from the ground up with
                 one mission: <span className="text-[#0f172a] font-semibold">give every Sri Lankan student a fair, transparent, and expert-guided pathway to Korean higher education.</span>
@@ -255,10 +254,10 @@ export default function AboutUs() {
 
             <div className="mt-8 space-y-4">
               {[
-                { year: "2019", event: "Checkmate Admission founded in Colombo" },
-                { year: "2021", event: "First 100 students successfully placed in Korea" },
-                { year: "2023", event: "Expanded to 15+ university partnerships" },
-                { year: "2025", event: "300+ placements · 98% visa success rate" },
+                { year: "2022", event: "Checkmate Admission founded in Colombo" },
+                { year: "2022", event: "Expanded to 15+ university partnerships" },
+                { year: "2024", event: "First 100 students successfully placed in Korea" },
+                { year: "2025", event: "150+ placements · 98% visa success rate" },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-12 text-right">
@@ -293,7 +292,7 @@ export default function AboutUs() {
               </h2>
               <p className="text-white/50 text-sm leading-relaxed font-medium mb-8">
                 We believe that geography and bureaucracy should never stand between a student
-                and world-class education. Our mission is to remove every barrier — documentation,
+                and world-class education. Our mission is to remove every barrier - documentation,
                 language, process complexity.
               </p>
 
@@ -301,7 +300,7 @@ export default function AboutUs() {
               <div className="space-y-4">
                 {[
                   { icon: <FaPassport className="text-blue-400 text-base" />, title: "Eliminate Barriers",   desc: "Simplify the complex Korean visa and admission process" },
-                  { icon: <HiScale className="text-blue-400 text-base" />, title: "Radical Transparency", desc: "No hidden fees, no false promises — ever" },
+                  { icon: <HiScale className="text-blue-400 text-base" />, title: "Radical Transparency", desc: "No hidden fees, no false promises - ever" },
                   { icon: <HiMap className="text-blue-400 text-base" />, title: "Build Bridges",        desc: "Connect Sri Lankan talent with Korean opportunity" },
                 ].map((p, i) => (
                   <div key={i} className="flex items-start gap-4 bg-white/[0.02] border border-white/5 rounded-xl p-4 transition-all duration-300 hover:bg-white/[0.04]">
@@ -391,7 +390,7 @@ export default function AboutUs() {
             </div>
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed max-w-sm font-medium lg:text-right lg:pb-2">
               Our team combines deep expertise in Korean immigration, university admissions,
-              and student support — all focused on your success.
+              and student support - all focused on your success.
             </p>
           </div>
 
@@ -407,7 +406,7 @@ export default function AboutUs() {
                   <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${c.bar} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-10`} />
 
 
-                  <div className="h-56 bg-slate-50 overflow-hidden relative">
+                  <div className="h-70 md:h-80 bg-slate-50 overflow-hidden relative">
                      <img 
                         src={member.image} 
                         alt={member.name} 
@@ -442,12 +441,12 @@ export default function AboutUs() {
                 Ready to start your Korea journey?
               </h2>
               <p className="text-white/40 text-xs sm:text-sm font-medium mb-8 max-w-md mx-auto">
-                Book a free consultation with our team today — no commitment, no fees.
+                Book a free consultation with our team today - no commitment, no fees.
               </p>
-              <button className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-black text-xs sm:text-sm uppercase tracking-widest px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5">
+              <Link to="/appointment" className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-black text-xs sm:text-sm uppercase tracking-widest px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5">
                 Book Free Consultation
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

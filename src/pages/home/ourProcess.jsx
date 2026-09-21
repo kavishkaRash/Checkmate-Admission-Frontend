@@ -225,7 +225,7 @@ export default function OurProcess() {
           </div>
 
           <p className="text-[#0d1b2a]/60 text-sm leading-relaxed max-w-sm font-medium lg:text-right lg:pb-2">
-            We've simplified the entire visa and admission process so you can focus on one thing —{" "}
+            We've simplified the entire visa and admission process so you can focus on one thing -{" "}
             <span className="text-[#0d1b2a] font-bold">getting excited about Korea.</span>
           </p>
         </div>
@@ -304,7 +304,7 @@ export default function OurProcess() {
             </div>
             <div>
               <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Next Korea Intake</div>
-              <div className="text-sm font-bold text-white">March & September</div>
+              <div className="text-sm font-bold text-white">December, March, June & September</div>
             </div>
           </div>
 
@@ -313,7 +313,7 @@ export default function OurProcess() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#0d1b2a]/50 text-xs font-medium">
-            Join <span className="text-[#0d1b2a] font-bold">300+ Sri Lankan students</span> already studying in Korea 🇰🇷
+            Join <span className="text-[#0d1b2a] font-bold">150+ Sri Lankan students</span> already studying in Korea 🇰🇷
           </p>
           <Link to="/appointment" className="group inline-flex items-center gap-2 bg-[#0d1b2a] hover:bg-[#2563eb] text-white font-bold text-xs uppercase tracking-widest px-7 py-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#2563eb]/20 active:translate-y-0">
             Begin Free Evaluation

@@ -14,12 +14,14 @@ import HomePage from './pages/homePage.jsx'
 import AboutUs from './pages/aboutUs.jsx'
 import ProtectedRoute from './components/protectedRoute.jsx'
 import UniversityDetail from './pages/university/UniversityDetail.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 function App() {
 
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
         <Toaster position='top-right' />
         <div className="w-full min-h-screen">
