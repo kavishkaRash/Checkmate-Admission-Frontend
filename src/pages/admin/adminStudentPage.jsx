@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { 
-    IoSchoolOutline, IoTrashOutline, IoCreateOutline, IoEyeOutline, 
-    IoSearchOutline, IoFilterOutline, IoCalendarOutline, IoCallOutline, IoMailOutline 
+import {
+    IoSchoolOutline, IoTrashOutline, IoCreateOutline, IoEyeOutline,
+    IoSearchOutline, IoFilterOutline, IoCalendarOutline, IoCallOutline, IoMailOutline
 } from "react-icons/io5";
 import Loader from "../../components/Loader";
 
 const EMPTY_FORM = {
     indexNo: "", name: "", birthday: "", passportNumber: "",
     applyingUniversity: "", applyingProgram: "", applyingMajor: "",
-    applyingSemester: "January", 
+    applyingSemester: "January",
     city: "", postalCode: "", address: "",
     applicantPhone: "", parentsPhone: "", email: "",
     sponsorName: "", sponsorRelation: "",
     instituteCategory: "", schoolName: "", results: "",
     gpa: "", entranceDate: "", graduateDate: "",
-    ieltsScore: "", showMoney: "", incomeSources: "",
+    ieltsScore: "", showMoney: "", incomeSources: "", refference: "N/A",
+    applyingYear: new Date().getFullYear()
 };
 
 const SelectField = ({ label, name, value, onChange, options }) => (
@@ -36,7 +37,7 @@ const SelectField = ({ label, name, value, onChange, options }) => (
     </div>
 );
 
-const Field = ({ label, name, value, onChange, placeholder, type = "text", span }) => (
+const Field = ({ label, name, value, onChange, placeholder, type = "text", span, readOnly }) => (
     <div className={span === 2 ? "md:col-span-2" : ""}>
         <label className="block text-xs font-bold text-accent/40 uppercase tracking-wider mb-1.5 ml-0.5">
             {label}
@@ -47,7 +48,8 @@ const Field = ({ label, name, value, onChange, placeholder, type = "text", span 
             value={value || ""}
             onChange={onChange}
             placeholder={placeholder}
-            className="w-full border border-accent/10 bg-accent/[0.01] px-4 py-2.5 rounded-xl text-sm text-accent focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition"
+            readOnly={readOnly}
+            className={`w-full border border-accent/10 px-4 py-2.5 rounded-xl text-sm text-accent focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition ${readOnly ? "bg-accent/[0.05] text-accent/60 cursor-not-allowed" : "bg-accent/[0.01]"}`}
         />
     </div>
 );
@@ -278,8 +280,8 @@ export default function AdminStudentPage() {
 
                                     <div className="flex items-center gap-2 pt-2 border-t border-accent/[0.03]">
                                         {s.applicantPhone && (
-                                            <a 
-                                                href={`tel:${s.applicantPhone}`} 
+                                            <a
+                                                href={`tel:${s.applicantPhone}`}
                                                 className="flex-1 flex items-center justify-center gap-1.5 h-9 bg-green-50 border border-green-200 text-green-700 font-bold text-xs rounded-xl active:bg-green-600 active:text-white transition"
                                             >
                                                 <IoCallOutline size={14} /> Call Student
@@ -368,7 +370,7 @@ export default function AdminStudentPage() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                                 <Info label="Birthday / Age" value={selectedStudent.birthday} />
                                 <Info label="Passport Number" value={selectedStudent.passportNumber} mono />
-                                
+
 
                                 <div>
                                     <span className="text-accent/40 block text-[10px] font-black uppercase tracking-wider">Email Address</span>
@@ -378,7 +380,7 @@ export default function AdminStudentPage() {
                                         </a>
                                     ) : <span className="text-accent/50 text-sm">Not Provided</span>}
                                 </div>
-                                
+
                                 <div>
                                     <span className="text-accent/40 block text-[10px] font-black uppercase tracking-wider">Applicant Mobile</span>
                                     {selectedStudent.applicantPhone ? (
@@ -398,14 +400,21 @@ export default function AdminStudentPage() {
 
                                 <Info label="City / Postal Code" value={`${selectedStudent.city} (${selectedStudent.postalCode || "N/A"})`} />
                                 <div className="sm:col-span-2 md:col-span-3"><Info label="Permanent Residence Address" value={selectedStudent.address} /></div>
+
+                                <div>
+                                    <p className="text-accent/40 block text-[10px] font-black uppercase tracking-wider">Refference</p>
+                                    <p className="font-semibold text-accent">{selectedStudent.refference || "N/A"}</p>
+                                </div>
+
                             </div>
                         </div>
                         <div>
                             <Section number="2" title="Applying Program Details" />
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
                                 <Info label="Target University" value={selectedStudent.applyingUniversity} bold />
                                 <Info label="Program Route" value={selectedStudent.applyingProgram} />
                                 <Info label="Academic Major" value={selectedStudent.applyingMajor} />
+                                <Info label="Applying Year" value={selectedStudent.applyingYear} />
                                 <Info label="Intake Semester" value={selectedStudent.applyingSemester || "January"} badge="purple" />
                             </div>
                         </div>
@@ -447,8 +456,7 @@ export default function AdminStudentPage() {
                         <div>
                             <Section number="1" title="Personal & Contact Information" />
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <Field label="Index Number" name="indexNo" value={form.indexNo} onChange={handleChange} placeholder="UOM/STU/2026/01" />
-                                <Field label="Full Name" name="name" value={form.name} onChange={handleChange} placeholder="Full legal name" />
+                                <Field label="Index Number" name="indexNo" value={form.indexNo} onChange={handleChange} placeholder="Auto-generated on save" readOnly />                                <Field label="Full Name" name="name" value={form.name} onChange={handleChange} placeholder="Full legal name" />
                                 <Field label="Birthday" name="birthday" value={form.birthday} onChange={handleChange} placeholder="YYYY.MM.DD" />
                                 <Field label="Passport Number" name="passportNumber" value={form.passportNumber} onChange={handleChange} placeholder="P0000000" />
                                 <Field label="Email Address" name="email" value={form.email} onChange={handleChange} placeholder="email@example.com" type="email" />
@@ -456,16 +464,24 @@ export default function AdminStudentPage() {
                                 <Field label="Parents Phone" name="parentsPhone" value={form.parentsPhone} onChange={handleChange} placeholder="+94 700 000 000" />
                                 <Field label="City" name="city" value={form.city} onChange={handleChange} placeholder="City" />
                                 <Field label="Postal Code" name="postalCode" value={form.postalCode} onChange={handleChange} placeholder="00000" />
+                                <SelectField
+                                    label="Refference"
+                                    name="refference"
+                                    value={form.refference || "N/A"}
+                                    onChange={handleChange}
+                                    options={["N/A", "CM", "H", "M", "R", "C1", "C2", "C3", "C4", "C5"]}
+                                />
                                 <Field label="Permanent Residence Address" name="address" value={form.address} onChange={handleChange} placeholder="Full address" span={2} />
                             </div>
                         </div>
 
                         <div>
                             <Section number="2" title="Applying Program Details" />
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                                 <Field label="Target University" name="applyingUniversity" value={form.applyingUniversity} onChange={handleChange} placeholder="e.g. Incheon" />
                                 <Field label="Program Route" name="applyingProgram" value={form.applyingProgram} onChange={handleChange} placeholder="e.g. Language" />
                                 <Field label="Academic Major" name="applyingMajor" value={form.applyingMajor} onChange={handleChange} placeholder="e.g. Korean Studies" />
+                                <Field label="Applying Year" name="applyingYear" value={form.applyingYear} onChange={handleChange} placeholder="2026" type="number" />
                                 <SelectField
                                     label="Intake Semester"
                                     name="applyingSemester"
